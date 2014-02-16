@@ -12,7 +12,11 @@
     <title>Страница добавления дисциплины</title>
 </head>
 <body>
-<h1>Страница добавления дисциплины</h1>
+
+<header>
+    <h1>Страница добавления дисциплины</h1>
+</header>
+
 <p>Здесь вы можете создать новую дисциплину.</p>
 <form:form method="POST" commandName="discipline" action="${pageContext.request.contextPath}/discipline/create/process.html">
     <table>

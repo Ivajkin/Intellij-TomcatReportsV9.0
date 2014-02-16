@@ -11,7 +11,7 @@ import java.util.List;
  */
 @Transactional
 public interface DictionaryItemDAO<T> {
-    public void create(DictionaryItem dictionaryItem);
+    public void create(T dictionaryItem);
     public T find(int id);
     public void delete(int id);
     public List<T> findItems();

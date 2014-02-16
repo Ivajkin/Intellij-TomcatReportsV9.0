@@ -21,19 +21,20 @@ import java.util.List;
  * Date: 2/12/14
  */
 @Controller
-public class TeacherController {
+@RequestMapping("/teacher")
+public class TeacherController implements DictionaryItemController<Teacher>  {
     @Autowired
     private TeacherDAO teacherService;
 
-    @RequestMapping(value = "/teacher/create")
-    public ModelAndView createTeacherPage() {
-        ModelAndView modelAndView = new ModelAndView("create-teacher-form");
+    @RequestMapping(value = "/create")
+    public ModelAndView createPage() {
+        ModelAndView modelAndView = new ModelAndView("create-discipline-form");
         modelAndView.addObject("teacher", new Teacher());
         return modelAndView;
     }
 
-    @RequestMapping(value = "/teacher/create/process")
-    public ModelAndView creatingTeacher(@ModelAttribute Teacher teacher) {
+    @RequestMapping(value = "/create/process")
+    public ModelAndView creating(@ModelAttribute Teacher teacher) {
         ModelAndView modelAndView = new ModelAndView("home");
         teacherService.create(teacher);
         String message = "Запись о преподавателе успешно добавлена: " + teacher.getName() + ".";
@@ -41,18 +42,20 @@ public class TeacherController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/teacher/list")
-    public ModelAndView listOfTeams() {
-        ModelAndView modelAndView = new ModelAndView("list-of-teacher");
+    @RequestMapping(value = "/list")
+    public ModelAndView listOfItems() {
+        ModelAndView modelAndView = new ModelAndView("list-of-disciplines");
 
         List<Teacher> teachers = teacherService.findItems();
+
         modelAndView.addObject("teachers", teachers);
+        modelAndView.addObject("teacher", new Teacher());
 
         return modelAndView;
     }
 
-    @RequestMapping(value = "/teacher/delete/{id}", method = RequestMethod.GET)
-    public ModelAndView deleteDiscipline(@PathVariable Integer id) {
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
+    public ModelAndView delete(@PathVariable Integer id) {
         ModelAndView modelAndView = new ModelAndView("home");
         teacherService.delete(id);
         String message = "Запись о преподавателе успешно удалена.";

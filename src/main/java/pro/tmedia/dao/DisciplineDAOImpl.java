@@ -16,7 +16,7 @@ import java.util.List;
  */
 @Repository
 @Transactional
-public class DisciplineDAOImpl extends DictionaryItemDAOImpl<Discipline> implements DisciplineDAO {
+public final class DisciplineDAOImpl extends DictionaryItemDAOImpl<Discipline> implements DisciplineDAO {
      /*
     @Autowired
     private SessionFactory sessionFactory;

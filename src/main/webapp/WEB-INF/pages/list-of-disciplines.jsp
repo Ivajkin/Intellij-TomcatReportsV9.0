@@ -3,6 +3,7 @@
   Date: 2/12/14
 --%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <?xml version="1.0" encoding="UTF-8" ?>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -12,8 +13,12 @@
     <title>Список дисциплин</title>
     <link type="text/css" rel="stylesheet" href="<c:url value='/css/style.css'/>"/>
 </head>
-<body>
-<h1>Список дисциплин</h1>
+<body class="panel">
+
+<header>
+    <h1>Список дисциплин</h1>
+</header>
+
 <p>Здесь вы можете видеть список дисциплин, удалять и добавлять.</p>
 <div class="iDemandPancakeTableStyle">
     <table border="1px" cellpadding="0" cellspacing="0" >
@@ -37,7 +42,32 @@
         </tbody>
     </table>
 </div>
+
+<br/>
+
+<h1>Страница добавления дисциплины</h1>
+<p>Здесь вы можете создать новую дисциплину.</p>
+<form:form method="POST" commandName="discipline" action="${pageContext.request.contextPath}/discipline/create/process.html">
+    <table>
+        <tbody>
+        <tr>
+            <td>Название:</td>
+            <td><form:input path="name" /></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Создать" /></td>
+            <td></td>
+        </tr>
+        </tbody>
+    </table>
+</form:form>
+
+<!--
+<br/>
+
 <p><a href="${pageContext.request.contextPath}/index.html">Home page</a></p>
+
+-->
 
 </body>
 </html>

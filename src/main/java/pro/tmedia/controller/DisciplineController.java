@@ -20,19 +20,22 @@ import java.util.List;
  * Date: 2/12/14
  */
 @Controller
-public class DisciplineController {
+@RequestMapping("/discipline")
+public class DisciplineController implements DictionaryItemController<Discipline> {
     @Autowired
     private DisciplineDAO disciplineService;
 
-    @RequestMapping(value = "/discipline/create")
-    public ModelAndView createDisciplinePage() {
+    @RequestMapping(value = "/create")
+    @Override
+    public ModelAndView createPage() {
         ModelAndView modelAndView = new ModelAndView("create-discipline-form");
         modelAndView.addObject("discipline", new Discipline());
         return modelAndView;
     }
 
-    @RequestMapping(value = "/discipline/create/process")
-    public ModelAndView creatingDiscipline(@ModelAttribute Discipline discipline) {
+    @RequestMapping(value = "/create/process")
+    @Override
+    public ModelAndView creating(@ModelAttribute Discipline discipline) {
         ModelAndView modelAndView = new ModelAndView("home");
         disciplineService.create(discipline);
         String message = "Дисциплина успешно добавлена: " + discipline.getName() + ".";
@@ -40,12 +43,15 @@ public class DisciplineController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/discipline/list")
-    public ModelAndView listOfTeams() {
+    @RequestMapping(value = "/list")
+    @Override
+    public ModelAndView listOfItems() {
         ModelAndView modelAndView = new ModelAndView("list-of-disciplines");
 
         List<Discipline> disciplines = disciplineService.findItems();
+
         modelAndView.addObject("disciplines", disciplines);
+        modelAndView.addObject("discipline", new Discipline());
 
         return modelAndView;
     }
@@ -90,8 +96,9 @@ public class DisciplineController {
 
            */
 
-    @RequestMapping(value = "/discipline/delete/{id}", method = RequestMethod.GET)
-    public ModelAndView deleteDiscipline(@PathVariable Integer id) {
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
+    @Override
+    public ModelAndView delete(@PathVariable Integer id) {
         ModelAndView modelAndView = new ModelAndView("home");
         disciplineService.delete(id);
         String message = "Дисциплина успешно удалена.";

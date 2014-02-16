@@ -4,7 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pro.tmedia.dao.DisciplineDAO;
+import pro.tmedia.dao.TeacherDAO;
 import pro.tmedia.model.Discipline;
+import pro.tmedia.model.Teacher;
 
 import java.util.List;
 
@@ -14,28 +16,28 @@ import java.util.List;
  */
 @Service
 @Transactional
-public class DisciplineServiceImpl implements DisciplineService {
+public class TeacherServiceImpl implements TeacherService {
 
     @Autowired
-    private DisciplineDAO disciplineDAO;
+    private TeacherDAO teacherDAO;
 
     @Override
-    public void create(Discipline discipline) {
-        disciplineDAO.create(discipline);
+    public void create(Teacher teacher) {
+        teacherDAO.create(teacher);
     }
 
     @Override
-    public Discipline find(int id) {
-        return disciplineDAO.find(id);
+    public Teacher find(int id) {
+        return teacherDAO.find(id);
     }
 
     @Override
     public void delete(int id) {
-        disciplineDAO.delete(id);
+        teacherDAO.delete(id);
     }
 
     @Override
-    public List<Discipline> findItems() {
-        return disciplineDAO.findItems();
+    public List<Teacher> findItems() {
+        return teacherDAO.findItems();
     }
 }

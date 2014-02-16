@@ -17,5 +17,5 @@ import java.util.List;
  */
 @Repository
 @Transactional
-public class TeacherDAOImpl extends DictionaryItemDAOImpl<Teacher> implements TeacherDAO {
+public final class TeacherDAOImpl extends DictionaryItemDAOImpl<Teacher> implements TeacherDAO {
 }
