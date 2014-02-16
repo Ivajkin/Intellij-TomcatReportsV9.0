@@ -20,21 +20,21 @@ public class DisciplineServiceImpl implements DisciplineService {
 
     @Override
     public void createDiscipline(Discipline discipline) {
-        disciplineDAO.createDiscipline(discipline);
+        disciplineDAO.create(discipline);
     }
 
     @Override
     public Discipline getDiscipline(int id) {
-        return disciplineDAO.getDiscipline(id);
+        return disciplineDAO.find(id);
     }
 
     @Override
     public void deleteDiscipline(int id) {
-        disciplineDAO.deleteDiscipline(id);
+        disciplineDAO.delete(id);
     }
 
     @Override
     public List<Discipline> getDisciplines() {
-        return disciplineDAO.getDisciplines();
+        return disciplineDAO.findItems();
     }
 }

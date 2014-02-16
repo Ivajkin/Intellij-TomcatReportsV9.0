@@ -8,16 +8,25 @@ import org.springframework.transaction.annotation.Transactional;
 import pro.tmedia.model.DictionaryItem;
 import pro.tmedia.model.Discipline;
 
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
 import java.util.List;
 
 /**
  * User: Ivaykin Timofey
  * Date: 2/12/14
  */
-@Repository
 @Transactional
-public class DisciplineDAOImpl extends DictionaryItemDAOImpl<Discipline> implements DisciplineDAO {
-     /*
+public abstract class DictionaryItemDAOImpl<T> implements DictionaryItemDAO<T> {
+
+    private Class<T> type;
+
+    DictionaryItemDAOImpl() {
+        Type t = getClass().getGenericSuperclass();
+        ParameterizedType pt = (ParameterizedType)t;
+        type = (Class)pt.getActualTypeArguments()[0];
+    }
+
     @Autowired
     private SessionFactory sessionFactory;
 
@@ -26,29 +35,29 @@ public class DisciplineDAOImpl extends DictionaryItemDAOImpl<Discipline> impleme
     }
 
     @Override
-    public void createDictionaryItem(DictionaryItem dictionaryItem) {
+    public void create(DictionaryItem dictionaryItem) {
         Discipline discipline = (Discipline) dictionaryItem;
         getCurrentSession().save(discipline);
     }
 
     @Override
-    public DictionaryItem getDictionaryItem(int id) {
-        DictionaryItem dictionaryItem = (DictionaryItem) getCurrentSession().get(Discipline.class, id);
+    public T find(final int id) {
+        T dictionaryItem = (T) getCurrentSession().get(type, id);
         return dictionaryItem;
     }
 
     @Override
-    public void deleteDictionaryItem(int id) {
-        DictionaryItem dictionaryItem = getDictionaryItem(id);
+    public void delete(final int id) {
+        T dictionaryItem = find(id);
         if(dictionaryItem != null)
             getCurrentSession().delete(dictionaryItem);
     }
 
     @SuppressWarnings("unchecked")
     @Override
-    public List<DictionaryItem> getDictionaryItems() {
-        return getCurrentSession().createQuery("from Discipline").list();
-    }    */
+    public List<T> findItems() {
+        return getCurrentSession().createQuery("from " + type.getName()).list();
+    }
 
     /*
      *  FOR UPDATE:

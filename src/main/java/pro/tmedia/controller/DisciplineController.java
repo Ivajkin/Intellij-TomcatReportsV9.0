@@ -7,7 +7,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import pro.tmedia.dao.DictionaryItemDAO;
 import pro.tmedia.dao.DisciplineDAO;
+import pro.tmedia.dao.DisciplineDAOImpl;
+import pro.tmedia.model.DictionaryItem;
 import pro.tmedia.model.Discipline;
 
 import java.util.List;
@@ -31,8 +34,7 @@ public class DisciplineController {
     @RequestMapping(value = "/discipline/create/process")
     public ModelAndView creatingDiscipline(@ModelAttribute Discipline discipline) {
         ModelAndView modelAndView = new ModelAndView("home");
-        // String test = "Дисциплина 1 漢字";
-        disciplineService.createDiscipline(discipline);
+        disciplineService.create(discipline);
         String message = "Дисциплина успешно добавлена: " + discipline.getName() + ".";
         modelAndView.addObject("message", message );
         return modelAndView;
@@ -42,7 +44,7 @@ public class DisciplineController {
     public ModelAndView listOfTeams() {
         ModelAndView modelAndView = new ModelAndView("list-of-disciplines");
 
-        List<Discipline> disciplines = disciplineService.getDisciplines();
+        List<Discipline> disciplines = disciplineService.findItems();
         modelAndView.addObject("disciplines", disciplines);
 
         return modelAndView;
@@ -91,7 +93,7 @@ public class DisciplineController {
     @RequestMapping(value = "/discipline/delete/{id}", method = RequestMethod.GET)
     public ModelAndView deleteDiscipline(@PathVariable Integer id) {
         ModelAndView modelAndView = new ModelAndView("home");
-        disciplineService.deleteDiscipline(id);
+        disciplineService.delete(id);
         String message = "Дисциплина успешно удалена.";
         modelAndView.addObject("message", message);
         return modelAndView;
