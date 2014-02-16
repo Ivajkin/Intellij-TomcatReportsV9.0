@@ -18,14 +18,14 @@
     <file path="/DisciplineService.java" changelist="281f6575-6afb-495a-9579-c980b0ff741a" time="1392551785178" ignored="false" />
     <file path="/DisciplineServiceImpl.java" changelist="281f6575-6afb-495a-9579-c980b0ff741a" time="1392551753452" ignored="false" />
     <file path="/LinkController.java" changelist="281f6575-6afb-495a-9579-c980b0ff741a" time="1392291517903" ignored="false" />
-    <file path="/home.jsp" changelist="281f6575-6afb-495a-9579-c980b0ff741a" time="1392559116894" ignored="false" />
+    <file path="/home.jsp" changelist="281f6575-6afb-495a-9579-c980b0ff741a" time="1392563862439" ignored="false" />
     <file path="/DisciplineController.java" changelist="281f6575-6afb-495a-9579-c980b0ff741a" time="1392553198725" ignored="false" />
-    <file path="/list-of-disciplines.jsp" changelist="281f6575-6afb-495a-9579-c980b0ff741a" time="1392559433843" ignored="false" />
+    <file path="/list-of-disciplines.jsp" changelist="281f6575-6afb-495a-9579-c980b0ff741a" time="1392563893213" ignored="false" />
     <file path="/create-discipline-form.jsp" changelist="281f6575-6afb-495a-9579-c980b0ff741a" time="1392557275115" ignored="false" />
     <file path="/pom.xml" changelist="281f6575-6afb-495a-9579-c980b0ff741a" time="1392205466773" ignored="false" />
     <file path="/web.xml" changelist="281f6575-6afb-495a-9579-c980b0ff741a" time="1392203969782" ignored="false" />
     <file path="/WebAppConfig.java" changelist="281f6575-6afb-495a-9579-c980b0ff741a" time="1392292695528" ignored="false" />
-    <file path="/style.css" changelist="281f6575-6afb-495a-9579-c980b0ff741a" time="1392559337906" ignored="false" />
+    <file path="/style.css" changelist="281f6575-6afb-495a-9579-c980b0ff741a" time="1392564023396" ignored="false" />
     <file path="/DictionaryItem.java" changelist="281f6575-6afb-495a-9579-c980b0ff741a" time="1392380566966" ignored="false" />
     <file path="/Teacher.java" changelist="281f6575-6afb-495a-9579-c980b0ff741a" time="1392380695069" ignored="false" />
     <file path="/DictionaryItemDAOImpl.java" changelist="281f6575-6afb-495a-9579-c980b0ff741a" time="1392547002785" ignored="false" />
@@ -139,7 +139,7 @@
       <file leaf-file-name="create-discipline-form.jsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/create-discipline-form.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="50" selection-start="595" selection-end="605" vertical-scroll-proportion="-10.461538">
+            <state line="16" column="50" selection-start="595" selection-end="605" vertical-scroll-proportion="-3.4615386">
               <folding />
             </state>
           </provider>
@@ -148,29 +148,29 @@
       <file leaf-file-name="home.jsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/home.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="21" selection-start="663" selection-end="663" vertical-scroll-proportion="-11.115385">
+            <state line="25" column="12" selection-start="781" selection-end="792" vertical-scroll-proportion="-8.5">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="style.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="4" selection-start="1551" selection-end="1551" vertical-scroll-proportion="0.0">
+            <state line="122" column="16" selection-start="5656" selection-end="5656" vertical-scroll-proportion="0.69572955">
               <folding>
                 <element signature="e#135#798#2" expanded="true" />
-                <element signature="e#1793#2456#2" expanded="true" />
-                <element signature="e#3303#3966#2" expanded="true" />
+                <element signature="e#1971#2634#2" expanded="true" />
+                <element signature="e#3481#4144#2" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="list-of-disciplines.jsp" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="list-of-disciplines.jsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/list-of-disciplines.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="70" column="0" selection-start="2256" selection-end="2256" vertical-scroll-proportion="0.84517306">
+            <state line="69" column="61" selection-start="2620" selection-end="2620" vertical-scroll-proportion="-37.26923">
               <folding />
             </state>
           </provider>
@@ -254,8 +254,8 @@
         <option value="$PROJECT_DIR$/src/main/java/pro/tmedia/controller/TeacherController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/create-discipline-form.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/home.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/css/style.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/list-of-disciplines.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/css/style.css" />
       </list>
     </option>
   </component>
@@ -959,11 +959,11 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39955357" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32924107" sideWeight="0.3511206" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32924107" sideWeight="0.3564568" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32959852" sideWeight="0.67045456" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32700893" sideWeight="0.46371397" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32700893" sideWeight="0.45944503" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26143792" sideWeight="0.21931818" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26143792" sideWeight="0.21931818" order="1" side_tool="true" content_ui="tabs" />
@@ -971,7 +971,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32993197" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1638207" sideWeight="0.6707589" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32924107" sideWeight="0.6451441" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32924107" sideWeight="0.6398079" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1133,33 +1133,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/create-discipline-form.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="50" selection-start="595" selection-end="605" vertical-scroll-proportion="-10.461538">
+        <state line="16" column="50" selection-start="595" selection-end="605" vertical-scroll-proportion="-3.4615386">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="4" selection-start="1551" selection-end="1551" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#135#798#2" expanded="true" />
-            <element signature="e#1793#2456#2" expanded="true" />
-            <element signature="e#3303#3966#2" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/home.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="21" selection-start="663" selection-end="663" vertical-scroll-proportion="-11.115385">
+        <state line="25" column="12" selection-start="781" selection-end="792" vertical-scroll-proportion="-8.5">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/list-of-disciplines.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="0" selection-start="2256" selection-end="2256" vertical-scroll-proportion="0.84517306">
+        <state line="69" column="61" selection-start="2620" selection-end="2620" vertical-scroll-proportion="-37.26923">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="122" column="16" selection-start="5656" selection-end="5656" vertical-scroll-proportion="0.69572955">
+          <folding>
+            <element signature="e#135#798#2" expanded="true" />
+            <element signature="e#1971#2634#2" expanded="true" />
+            <element signature="e#3481#4144#2" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

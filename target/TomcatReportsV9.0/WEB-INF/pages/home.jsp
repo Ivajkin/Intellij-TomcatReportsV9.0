@@ -13,25 +13,37 @@
     <link type="text/css" rel="stylesheet" href="<c:url value='/css/style.css'/>"/>
 </head>
 <body>
-<header>
+<header class="mainheader">
     <h1>TomcatReportsV9.0</h1>
     <h2>Ивайкин Т.С., ПО(м)-21</h2>
 
 </header>
 
 <nav class="panel">
-    ${message}<br/>
-    <a href="${pageContext.request.contextPath}/discipline/create.html">Добавить новую дисциплину</a><br/>
-    <a href="${pageContext.request.contextPath}/discipline/list.html">Список дисциплин</a><br/>
+    <header>
+        <h1>Таблицы</h1>
+    </header>
 
-    <br/>
+    <main>
+        <a href="${pageContext.request.contextPath}/discipline/create.html">Добавить новую дисциплину</a><br/>
+        <a href="${pageContext.request.contextPath}/discipline/list.html">Список дисциплин</a><br/>
 
-    <a href="${pageContext.request.contextPath}/teacher/create.html">Добавить преподавателя</a><br/>
-    <a href="${pageContext.request.contextPath}/teacher/list.html">Список преподавателей</a><br/>
+        <br/>
+
+        <a href="${pageContext.request.contextPath}/teacher/create.html">Добавить преподавателя</a><br/>
+        <a href="${pageContext.request.contextPath}/teacher/list.html">Список преподавателей</a><br/>
+    </main>
 </nav>
-<main class="panel">
-    <iframe scrolling="no" src="${pageContext.request.contextPath}/discipline/list.html" seamless/>
+
+<main>
+    <iframe scrolling="no" src="${pageContext.request.contextPath}/discipline/list.html" seamless>
+        <!-- //required for browser compatibility -->
+    </iframe>
 </main>
+
+<footer class="panel">
+    ${message}
+</footer>
 
 </body>
 </html>

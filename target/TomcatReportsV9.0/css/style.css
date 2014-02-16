@@ -11,6 +11,19 @@ body {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#547980', endColorstr='#e5fcc2',GradientType=0 ); /* IE6-8 */
 
     font-family: Tahoma, Geneva, sans-serif;
+
+
+    color: #594f4f;
+    margin: 0;
+}
+
+body header.mainheader {
+    margin-right: 20px;
+    text-align: right;
+}
+
+h1, h2 {
+    color: #e5fcc2;
 }
 
 h1 {
@@ -24,6 +37,8 @@ h2 {
 }
 
 .panel {
+    margin: 10px 10px 10px 10px;
+
     background: #deeaf7; /* Old browsers */
     /* IE9 SVG, needs conditional override of 'filter' to 'none' */
     background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2RlZWFmNyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNjZWQ2YzUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
@@ -47,10 +62,23 @@ h2 {
     background: -ms-linear-gradient(top,  #deeaf7 0%,#ced6c5 100%); /* IE10+ */
     background: linear-gradient(to bottom,  #deeaf7 0%,#ced6c5 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#deeaf7', endColorstr='#ced6c5',GradientType=0 ); /* IE6-8 */
+
+
+    padding: 5px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
 }
 .panel header h1 {
     font-size: 1em;
-    margin-left: 10px;
+    padding-left: 10px;
+    margin: 0;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.panel h1, .panel h2 {
+    color: #e5fcc2;
+    color: #594f4f;
 }
 
 nav {
@@ -60,9 +88,9 @@ nav {
     height: 100%;
 }
 
-main {
+body main {
     float: right;
-    width: 74%;
+    width: 70%;
     height: 100%;
 }
 
@@ -70,6 +98,29 @@ iframe {
     width: 100%;
     height: 80%;
     overflow: hidden;
+}
+
+footer {
+    height: 10px;
+    bottom: 0;
+    width: 100%;
+    position: fixed;
+    padding-bottom: 15px;
+    left: 0;
+    padding-left: 10px;
+    padding-top: 5px;
+    margin: 0 !important;
+}
+
+.invisibleBackground {
+    background: none;
+}
+
+.panel main {
+    height: 100%;
+    width: 100%;
+    margin: 10px;
+    float: none;
 }
 
 .iDemandPancakeTableStyle {
