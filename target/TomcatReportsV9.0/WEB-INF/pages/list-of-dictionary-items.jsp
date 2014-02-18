@@ -37,7 +37,7 @@
                             ${dictionaryItem.name}
                         </td>
                         <td>
-                            <a href="${pageContext.request.contextPath}/discipline/delete/${dictionaryItem.id}.html">Удалить (-)</a><br/>
+                            <a href="${pageContext.request.contextPath}${dictionaryTypePath}/delete/${dictionaryItem.id}.html">Удалить (-)</a><br/>
                         </td>
                     </tr>
                 </c:forEach>

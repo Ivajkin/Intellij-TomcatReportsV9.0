@@ -22,44 +22,36 @@ import java.util.List;
  */
 @Controller
 @RequestMapping("/teacher")
-public class TeacherController implements DictionaryItemController<Teacher>  {
+public class TeacherController extends DictionaryItemController<Teacher>  {
     @Autowired
     private TeacherDAO teacherService;
 
-    @RequestMapping(value = "/create")
-    public ModelAndView createPage() {
-        ModelAndView modelAndView = new ModelAndView("create-discipline-form");
-        modelAndView.addObject("dictionaryItem", new Teacher());
-        return modelAndView;
+    @Override
+    protected Teacher getNewDictionaryItem() {
+        return new Teacher();
     }
 
-    @RequestMapping(value = "/create/process")
-    public ModelAndView creating(@ModelAttribute Teacher teacher) {
-        ModelAndView modelAndView = new ModelAndView("home");
+    @Override
+    protected String createDictionaryItemDB(Teacher teacher) {
         teacherService.create(teacher);
         String message = "Запись о преподавателе успешно добавлена: " + teacher.getName() + ".";
-        modelAndView.addObject("message", message );
-        return modelAndView;
+        return message;
     }
 
-    @RequestMapping(value = "/list")
-    public ModelAndView listOfItems() {
-        ModelAndView modelAndView = new ModelAndView("list-of-disciplines");
-
-        List<Teacher> dictionaryItems = teacherService.findItems();
-
-        modelAndView.addObject("dictionaryItems", dictionaryItems);
-
-        return modelAndView;
+    @Override
+    protected List<Teacher> getItems() {
+        return teacherService.findItems();
     }
 
-    @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
-    public ModelAndView delete(@PathVariable Integer id) {
-        ModelAndView modelAndView = new ModelAndView("home");
+    @Override
+    protected String deleteItem(Integer id) {
         teacherService.delete(id);
         String message = "Запись о преподавателе успешно удалена.";
-        modelAndView.addObject("message", message);
-        return modelAndView;
+        return message;
     }
 
+    @Override
+    protected String getDictionaryTypePath() {
+        return "/teacher";
+    }
 }

@@ -10,7 +10,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Страница добавления дисциплины</title>
+    <title>Страница добавления</title>
     <link type="text/css" rel="stylesheet" href="<c:url value='/css/style.css'/>"/>
 </head>
 <body class="invisibleBackground">
@@ -21,8 +21,8 @@
     </header>
 
     <main>
-        <p>Здесь вы можете создать новую дисциплину.</p>
-        <form:form method="POST" commandName="dictionaryItem" action="${pageContext.request.contextPath}/discipline/create/process.html">
+        <p>Здесь вы можете создать новую запись.</p>
+        <form:form method="POST" commandName="dictionaryItem" action="${pageContext.request.contextPath}${dictionaryTypePath}/create/process.html">
             <table>
                 <tbody>
                 <tr>
