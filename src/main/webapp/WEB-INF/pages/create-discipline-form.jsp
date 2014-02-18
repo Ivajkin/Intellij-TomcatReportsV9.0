@@ -2,6 +2,7 @@
   User: Ivaykin Timofey
   Date: 2/12/14
 --%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <?xml version="1.0" encoding="UTF-8" ?>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -10,29 +11,33 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Страница добавления дисциплины</title>
+    <link type="text/css" rel="stylesheet" href="<c:url value='/css/style.css'/>"/>
 </head>
-<body>
+<body class="invisibleBackground">
 
-<header>
-    <h1>Страница добавления дисциплины</h1>
-</header>
+<div class="panel">
+    <header>
+        <h1>Действия</h1>
+    </header>
 
-<p>Здесь вы можете создать новую дисциплину.</p>
-<form:form method="POST" commandName="discipline" action="${pageContext.request.contextPath}/discipline/create/process.html">
-    <table>
-        <tbody>
-        <tr>
-            <td>Название:</td>
-            <td><form:input path="name" /></td>
-        </tr>
-        <tr>
-            <td><input type="submit" value="Создать" /></td>
-            <td></td>
-        </tr>
-        </tbody>
-    </table>
-</form:form>
+    <main>
+        <p>Здесь вы можете создать новую дисциплину.</p>
+        <form:form method="POST" commandName="discipline" action="${pageContext.request.contextPath}/discipline/create/process.html">
+            <table>
+                <tbody>
+                <tr>
+                    <td>Название:</td>
+                    <td><form:input path="name" /></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Создать" /></td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
+        </form:form>
 
-<p><a href="${pageContext.request.contextPath}/index.html">Домашняя страница</a></p>
+    </main>
+</div>
 </body>
 </html>

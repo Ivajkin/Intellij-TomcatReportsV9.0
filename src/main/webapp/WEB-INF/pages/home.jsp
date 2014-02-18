@@ -11,6 +11,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Домашняя страница</title>
     <link type="text/css" rel="stylesheet" href="<c:url value='/css/style.css'/>"/>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/module/jquery-2.1.0.min.js"></script>
 </head>
 <body>
 <header class="mainheader">
@@ -19,31 +20,31 @@
 
 </header>
 
-<nav class="panel">
+<nav class="panel main">
     <header>
         <h1>Таблицы</h1>
     </header>
 
     <main>
-        <a href="${pageContext.request.contextPath}/discipline/create.html">Добавить новую дисциплину</a><br/>
-        <a href="${pageContext.request.contextPath}/discipline/list.html">Список дисциплин</a><br/>
-
-        <br/>
-
-        <a href="${pageContext.request.contextPath}/teacher/create.html">Добавить преподавателя</a><br/>
-        <a href="${pageContext.request.contextPath}/teacher/list.html">Список преподавателей</a><br/>
     </main>
 </nav>
 
-<main>
-    <iframe scrolling="no" src="${pageContext.request.contextPath}/discipline/list.html" seamless>
+<main class="main">
+    <iframe id="listPanelFrame" scrolling="no" src="${pageContext.request.contextPath}/discipline/list.html" seamless>
         <!-- //required for browser compatibility -->
     </iframe>
 </main>
+
+<section class="main">
+    <iframe id="actionPanelFrame" scrolling="no" src="${pageContext.request.contextPath}/discipline/create.html" seamless>
+        <!-- //required for browser compatibility -->
+    </iframe>
+</section>
 
 <footer class="panel">
     ${message}
 </footer>
 
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/home.js"></script>
 </body>
 </html>

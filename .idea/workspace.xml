@@ -18,14 +18,14 @@
     <file path="/DisciplineService.java" changelist="281f6575-6afb-495a-9579-c980b0ff741a" time="1392551785178" ignored="false" />
     <file path="/DisciplineServiceImpl.java" changelist="281f6575-6afb-495a-9579-c980b0ff741a" time="1392551753452" ignored="false" />
     <file path="/LinkController.java" changelist="281f6575-6afb-495a-9579-c980b0ff741a" time="1392291517903" ignored="false" />
-    <file path="/home.jsp" changelist="281f6575-6afb-495a-9579-c980b0ff741a" time="1392563862439" ignored="false" />
+    <file path="/home.jsp" changelist="281f6575-6afb-495a-9579-c980b0ff741a" time="1392690273320" ignored="false" />
     <file path="/DisciplineController.java" changelist="281f6575-6afb-495a-9579-c980b0ff741a" time="1392553198725" ignored="false" />
-    <file path="/list-of-disciplines.jsp" changelist="281f6575-6afb-495a-9579-c980b0ff741a" time="1392563893213" ignored="false" />
-    <file path="/create-discipline-form.jsp" changelist="281f6575-6afb-495a-9579-c980b0ff741a" time="1392557275115" ignored="false" />
+    <file path="/list-of-disciplines.jsp" changelist="281f6575-6afb-495a-9579-c980b0ff741a" time="1392686384146" ignored="false" />
+    <file path="/create-discipline-form.jsp" changelist="281f6575-6afb-495a-9579-c980b0ff741a" time="1392688013125" ignored="false" />
     <file path="/pom.xml" changelist="281f6575-6afb-495a-9579-c980b0ff741a" time="1392205466773" ignored="false" />
     <file path="/web.xml" changelist="281f6575-6afb-495a-9579-c980b0ff741a" time="1392203969782" ignored="false" />
     <file path="/WebAppConfig.java" changelist="281f6575-6afb-495a-9579-c980b0ff741a" time="1392292695528" ignored="false" />
-    <file path="/style.css" changelist="281f6575-6afb-495a-9579-c980b0ff741a" time="1392564023396" ignored="false" />
+    <file path="/style.css" changelist="281f6575-6afb-495a-9579-c980b0ff741a" time="1392688057393" ignored="false" />
     <file path="/DictionaryItem.java" changelist="281f6575-6afb-495a-9579-c980b0ff741a" time="1392380566966" ignored="false" />
     <file path="/Teacher.java" changelist="281f6575-6afb-495a-9579-c980b0ff741a" time="1392380695069" ignored="false" />
     <file path="/DictionaryItemDAOImpl.java" changelist="281f6575-6afb-495a-9579-c980b0ff741a" time="1392547002785" ignored="false" />
@@ -42,6 +42,7 @@
     <file path="/TeacherService.java" changelist="281f6575-6afb-495a-9579-c980b0ff741a" time="1392551833545" ignored="false" />
     <file path="/TeacherServiceImpl.java" changelist="281f6575-6afb-495a-9579-c980b0ff741a" time="1392551924848" ignored="false" />
     <file path="/DictionaryItemController.java" changelist="281f6575-6afb-495a-9579-c980b0ff741a" time="1392553362275" ignored="false" />
+    <file path="/home.js" changelist="281f6575-6afb-495a-9579-c980b0ff741a" time="1392690372210" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +131,7 @@
       <file leaf-file-name="TeacherController.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/pro/tmedia/controller/TeacherController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="8" selection-start="1789" selection-end="1789" vertical-scroll-proportion="0.0">
+            <state line="49" column="0" selection-start="1789" selection-end="1789" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -139,29 +140,40 @@
       <file leaf-file-name="create-discipline-form.jsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/create-discipline-form.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="50" selection-start="595" selection-end="605" vertical-scroll-proportion="-3.4615386">
+            <state line="19" column="20" selection-start="772" selection-end="772" vertical-scroll-proportion="-10.461538">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.jsp" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="home.jsp" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/home.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="12" selection-start="781" selection-end="792" vertical-scroll-proportion="-8.5">
+            <state line="37" column="66" selection-start="1169" selection-end="1169" vertical-scroll-proportion="0.87613845">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="jquery-2.1.0.min.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/module/jquery-2.1.0.min.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="19447" selection-start="83622" selection-end="83622" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="122" column="16" selection-start="5656" selection-end="5656" vertical-scroll-proportion="0.69572955">
+            <state line="99" column="13" selection-start="5340" selection-end="5340" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="e#135#798#2" expanded="true" />
-                <element signature="e#1971#2634#2" expanded="true" />
-                <element signature="e#3481#4144#2" expanded="true" />
+                <element signature="e#163#826#2" expanded="true" />
+                <element signature="e#2067#2730#2" expanded="true" />
+                <element signature="e#3601#4264#2" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -170,7 +182,16 @@
       <file leaf-file-name="list-of-disciplines.jsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/list-of-disciplines.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="61" selection-start="2620" selection-end="2620" vertical-scroll-proportion="-37.26923">
+            <state line="3" column="4" selection-start="49" selection-end="113" vertical-scroll-proportion="-1.9615384">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/js/home.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="34" selection-start="432" selection-end="432" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -196,33 +217,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SemesterDAOImpl.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pro/tmedia/dao/SemesterDAOImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="13" selection-start="265" selection-end="265" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LinkController.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pro/tmedia/controller/LinkController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="26" selection-start="388" selection-end="388" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TeacherDAOImpl.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pro/tmedia/dao/TeacherDAOImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="13" selection-start="494" selection-end="494" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindManager">
@@ -240,11 +234,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/pro/tmedia/service/DisciplineServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pro/tmedia/service/DisciplineService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pro/tmedia/service/TeacherService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pro/tmedia/service/TeacherServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pro/tmedia/dao/DisciplineDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/pro/tmedia/dao/FlowDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/pro/tmedia/dao/SemesterDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/pro/tmedia/dao/TeacherDAOImpl.java" />
@@ -252,10 +241,15 @@
         <option value="$PROJECT_DIR$/src/main/java/pro/tmedia/controller/DictionaryItemController.java" />
         <option value="$PROJECT_DIR$/src/main/java/pro/tmedia/controller/DisciplineController.java" />
         <option value="$PROJECT_DIR$/src/main/java/pro/tmedia/controller/TeacherController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/create-discipline-form.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/home.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/js/jquery-2.0.2.min.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/list-of-disciplines.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/create-discipline-form.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/css/style.css" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/home.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/js/home.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/module/jquery-2.1.0.min.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/module/jquery-2.1.0.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/module/jquery-2.1.0.min.map" />
       </list>
     </option>
   </component>
@@ -431,6 +425,58 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TomcatReportsV9.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Intellij-TomcatReportsV9.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="module" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TomcatReportsV9.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Intellij-TomcatReportsV9.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -666,6 +712,7 @@
       <recent name="pro.tmedia.controller" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Timofej\Dropbox\Study\ПО(м) - 3 семестр\1. Распределённые информационные системы\Intellij-TomcatReportsV9.0\src\main\webapp\module" />
       <recent name="C:\Users\Timofej\Dropbox\Study\ПО(м) - 3 семестр\1. Распределённые информационные системы\TomcatReportsV9.0\src\main\webapp" />
       <recent name="C:\Users\Timofej\Dropbox\Study\ПО(м) - 3 семестр\1. Распределённые информационные системы\TomcatReportsV9.0\src\main\webapp\WEB-INF\pages" />
       <recent name="C:\Users\Timofej\Dropbox\Study\ПО(м) - 3 семестр\1. Распределённые информационные системы\TomcatReportsV9.0\src\main\webapp\WEB-INF" />
@@ -1039,38 +1086,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/pro/tmedia/service/DisciplineServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="13" selection-start="389" selection-end="389" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pro/tmedia/service/TeacherService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="17" selection-start="130" selection-end="130" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pro/tmedia/service/TeacherServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="33" selection-start="644" selection-end="644" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pro/tmedia/dao/FlowDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="17" selection-start="203" selection-end="203" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pro/tmedia/dao/DisciplineDAOImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="7" selection-start="455" selection-end="461" vertical-scroll-proportion="0.0">
@@ -1126,40 +1141,72 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pro/tmedia/controller/TeacherController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="8" selection-start="1789" selection-end="1789" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/create-discipline-form.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="50" selection-start="595" selection-end="605" vertical-scroll-proportion="-3.4615386">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/home.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="12" selection-start="781" selection-end="792" vertical-scroll-proportion="-8.5">
+        <state line="49" column="0" selection-start="1789" selection-end="1789" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/list-of-disciplines.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="61" selection-start="2620" selection-end="2620" vertical-scroll-proportion="-37.26923">
+        <state line="3" column="4" selection-start="49" selection-end="113" vertical-scroll-proportion="-1.9615384">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/create-discipline-form.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="20" selection-start="772" selection-end="772" vertical-scroll-proportion="-10.461538">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="122" column="16" selection-start="5656" selection-end="5656" vertical-scroll-proportion="0.69572955">
+        <state line="99" column="13" selection-start="5340" selection-end="5340" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="e#135#798#2" expanded="true" />
-            <element signature="e#1971#2634#2" expanded="true" />
-            <element signature="e#3481#4144#2" expanded="true" />
+            <element signature="e#163#826#2" expanded="true" />
+            <element signature="e#2067#2730#2" expanded="true" />
+            <element signature="e#3601#4264#2" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="34" selection-start="432" selection-end="432" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/module/jquery-2.1.0.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9110" column="4" selection-start="347546" selection-end="347546" vertical-scroll-proportion="0.94086957">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/module/jquery-2.1.0.min.map">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="126674" selection-start="126674" selection-end="126674" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/module/jquery-2.1.0.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="19447" selection-start="83622" selection-end="83622" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/home.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="66" selection-start="1169" selection-end="1169" vertical-scroll-proportion="0.87613845">
+          <folding />
         </state>
       </provider>
     </entry>

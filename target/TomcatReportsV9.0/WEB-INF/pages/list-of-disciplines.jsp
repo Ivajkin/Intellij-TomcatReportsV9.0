@@ -47,7 +47,7 @@
 
         <br/>
 
-        <h1>Страница добавления дисциплины</h1>
+        <!--<h1>Страница добавления дисциплины</h1>
         <p>Здесь вы можете создать новую дисциплину.</p>
         <form:form method="POST" commandName="discipline" action="${pageContext.request.contextPath}/discipline/create/process.html">
             <table>
@@ -62,14 +62,8 @@
                 </tr>
                 </tbody>
             </table>
-        </form:form>
+        </form:form>  -->
 
-        <!--
-<br/>
-
-<p><a href="${pageContext.request.contextPath}/index.html">Home page</a></p>
-
--->
 
     </main>
 </div>
