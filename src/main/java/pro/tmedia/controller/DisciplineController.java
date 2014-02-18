@@ -29,7 +29,7 @@ public class DisciplineController implements DictionaryItemController<Discipline
     @Override
     public ModelAndView createPage() {
         ModelAndView modelAndView = new ModelAndView("create-discipline-form");
-        modelAndView.addObject("discipline", new Discipline());
+        modelAndView.addObject("dictionaryItem", new Discipline());
         return modelAndView;
     }
 
@@ -48,10 +48,9 @@ public class DisciplineController implements DictionaryItemController<Discipline
     public ModelAndView listOfItems() {
         ModelAndView modelAndView = new ModelAndView("list-of-disciplines");
 
-        List<Discipline> disciplines = disciplineService.findItems();
+        List<Discipline> dictionaryItems = disciplineService.findItems();
 
-        modelAndView.addObject("disciplines", disciplines);
-        modelAndView.addObject("discipline", new Discipline());
+        modelAndView.addObject("dictionaryItems", dictionaryItems);
 
         return modelAndView;
     }

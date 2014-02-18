@@ -31,13 +31,13 @@
                 </tr>
                 </thead>
                 <tbody>
-                <c:forEach var="discipline" items="${disciplines}">
+                <c:forEach var="dictionaryItem" items="${dictionaryItems}">
                     <tr>
-                        <!--<td>${discipline.id}</td>-->
-                        <td>${discipline.name}</td>
                         <td>
-                            <!--<a href="${pageContext.request.contextPath}/discipline/edit/${discipline.id}.html">Edit</a><br/>-->
-                            <a href="${pageContext.request.contextPath}/discipline/delete/${discipline.id}.html">Удалить (-)</a><br/>
+                            ${dictionaryItem.name}
+                        </td>
+                        <td>
+                            <a href="${pageContext.request.contextPath}/discipline/delete/${dictionaryItem.id}.html">Удалить (-)</a><br/>
                         </td>
                     </tr>
                 </c:forEach>
@@ -45,24 +45,6 @@
             </table>
         </div>
 
-        <br/>
-
-        <!--<h1>Страница добавления дисциплины</h1>
-        <p>Здесь вы можете создать новую дисциплину.</p>
-        <form:form method="POST" commandName="discipline" action="${pageContext.request.contextPath}/discipline/create/process.html">
-            <table>
-                <tbody>
-                <tr>
-                    <td>Название:</td>
-                    <td><form:input path="name" /></td>
-                </tr>
-                <tr>
-                    <td><input type="submit" value="Создать" /></td>
-                    <td></td>
-                </tr>
-                </tbody>
-            </table>
-        </form:form>  -->
 
 
     </main>

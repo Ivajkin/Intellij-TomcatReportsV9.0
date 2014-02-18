@@ -29,7 +29,7 @@ public class TeacherController implements DictionaryItemController<Teacher>  {
     @RequestMapping(value = "/create")
     public ModelAndView createPage() {
         ModelAndView modelAndView = new ModelAndView("create-discipline-form");
-        modelAndView.addObject("teacher", new Teacher());
+        modelAndView.addObject("dictionaryItem", new Teacher());
         return modelAndView;
     }
 
@@ -46,10 +46,9 @@ public class TeacherController implements DictionaryItemController<Teacher>  {
     public ModelAndView listOfItems() {
         ModelAndView modelAndView = new ModelAndView("list-of-disciplines");
 
-        List<Teacher> teachers = teacherService.findItems();
+        List<Teacher> dictionaryItems = teacherService.findItems();
 
-        modelAndView.addObject("teachers", teachers);
-        modelAndView.addObject("teacher", new Teacher());
+        modelAndView.addObject("dictionaryItems", dictionaryItems);
 
         return modelAndView;
     }

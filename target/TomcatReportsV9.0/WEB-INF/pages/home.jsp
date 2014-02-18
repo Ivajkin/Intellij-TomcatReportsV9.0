@@ -11,7 +11,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Домашняя страница</title>
     <link type="text/css" rel="stylesheet" href="<c:url value='/css/style.css'/>"/>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/module/jquery-2.0.2.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/module/jquery-2.1.0.min.js"></script>
 </head>
 <body>
 <header class="mainheader">

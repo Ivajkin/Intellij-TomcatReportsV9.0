@@ -22,7 +22,7 @@
 
     <main>
         <p>Здесь вы можете создать новую дисциплину.</p>
-        <form:form method="POST" commandName="discipline" action="${pageContext.request.contextPath}/discipline/create/process.html">
+        <form:form method="POST" commandName="dictionaryItem" action="${pageContext.request.contextPath}/discipline/create/process.html">
             <table>
                 <tbody>
                 <tr>
