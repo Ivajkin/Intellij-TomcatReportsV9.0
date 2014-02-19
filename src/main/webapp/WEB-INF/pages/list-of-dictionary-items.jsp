@@ -17,11 +17,11 @@
 
 <div class="panel">
     <header>
-        <h1>Список дисциплин</h1>
+        <h1>${panelHeaderInfo}</h1>
     </header>
 
     <main>
-        <p>Здесь вы можете видеть список дисциплин, удалять и добавлять.</p>
+        <p>${panelDescriptionInfo}</p>
         <div class="iDemandPancakeTableStyle">
             <table border="1px" cellpadding="0" cellspacing="0" >
                 <thead>

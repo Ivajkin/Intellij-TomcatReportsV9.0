@@ -3,6 +3,8 @@ package pro.tmedia.model;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
+import javax.persistence.OneToMany;
+import java.util.Set;
 
 /**
  * User: Ivaykin Timofey
@@ -23,4 +25,8 @@ public class DictionaryItem {
     public void setName(String name) {
         this.name = name;
     }
+
+
+    @OneToMany
+    Set<ReportEntry> reports;
 }

@@ -4,7 +4,7 @@ package pro.tmedia.init;
  * User: Ivaykin Timofey
  * Date: 2/13/14
  */
-public interface IConfigConstants {
+interface IConfigConstants {
     public static final String RESOURCE_HANDLER="/resources/**";
     public static final String RESOURCE_LOCATION="/resources/";
     public static final String CSS_HANDLER="/css/**";

@@ -8,17 +8,38 @@
          'disciplines': {
              label: 'Список дисциплин',
              listPath: '/discipline/list.html',
-             createPath: '/discipline/create.html'
+             createPath: '/discipline/create.html',
+             icon: 'disciplineIcon.png'
          },
          'teachers': {
              label: 'Список преподавателей',
              listPath: '/teacher/list.html',
-             createPath: '/teacher/create.html'
+             createPath: '/teacher/create.html',
+             icon: 'teacherIcon.png'
          },
-         'flow': {
+         'flows': {
              label: 'Список потоков',
              listPath: '/flow/list.html',
-             createPath: '/flow/create.html'
+             createPath: '/flow/create.html',
+             icon: 'flowIcon.png'
+         },
+         'semesters': {
+             label: 'Список семестров',
+             listPath: '/semester/list.html',
+             createPath: '/semester/create.html',
+             icon: 'semesterIcon.png'
+         },
+         'departments': {
+             label: 'Список кафедр',
+             listPath: '/department/list.html',
+             createPath: '/department/create.html',
+             icon: 'departmentIcon.png'
+         },
+         'reports': {
+             label: 'Вывести отчет',
+             listPath: '/report/list.html',
+             createPath: '/report/actions.html',
+             icon: 'reportIcon.png'
          }
      };
 
@@ -28,7 +49,9 @@
      }
 
      for(var dic in dictionaries) {
-         $('<a id="'+ dic + '" href="#">' + dictionaries[dic]['label'] + '</a><br/>').appendTo("nav main");
+         $('<a class="tableButton" id="'+ dic + '" href="#">'
+             + '<img class="tableIcon" src="/img/' + dictionaries[dic]['icon'] + '" />'
+             + dictionaries[dic]['label'] + '</a><br/>').appendTo("nav main");
          $('#' + dic).click(function () {
              openDictionary(this.id);
          });

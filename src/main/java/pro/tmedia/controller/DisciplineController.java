@@ -53,4 +53,14 @@ public class DisciplineController extends DictionaryItemController<Discipline> {
     protected String getDictionaryTypePath() {
         return "/discipline";
     }
+
+    @Override
+    protected String getPanelHeaderInfo() {
+        return "Список дисциплин";
+    }
+
+    @Override
+    protected String getPanelDescriptionInfo() {
+        return "Здесь вы можете видеть список дисциплин, удалять и добавлять.";
+    }
 }

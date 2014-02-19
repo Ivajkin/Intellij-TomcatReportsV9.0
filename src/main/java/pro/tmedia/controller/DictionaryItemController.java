@@ -41,6 +41,8 @@ public abstract class DictionaryItemController<T> {
 
         modelAndView.addObject("dictionaryItems", dictionaryItems);
         modelAndView.addObject("dictionaryTypePath", getDictionaryTypePath());
+        modelAndView.addObject("panelHeaderInfo", getPanelHeaderInfo());
+        modelAndView.addObject("panelDescriptionInfo", getPanelDescriptionInfo());
 
         return modelAndView;
     }
@@ -98,4 +100,6 @@ public abstract class DictionaryItemController<T> {
     protected abstract List<T> getItems();
     protected abstract String deleteItem(Integer id);
     protected abstract String getDictionaryTypePath();
+    protected abstract String getPanelHeaderInfo();
+    protected abstract String getPanelDescriptionInfo();
 }

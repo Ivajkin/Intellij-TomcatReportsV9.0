@@ -54,4 +54,14 @@ public class TeacherController extends DictionaryItemController<Teacher>  {
     protected String getDictionaryTypePath() {
         return "/teacher";
     }
+
+    @Override
+    protected String getPanelHeaderInfo() {
+        return "Список записей о преподавателях";
+    }
+
+    @Override
+    protected String getPanelDescriptionInfo() {
+        return "Здесь вы можете видеть список записей о преподавателях, удалять и добавлять.";
+    }
 }

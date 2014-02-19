@@ -17,27 +17,37 @@
 
 <div class="panel">
     <header>
-        <h1>${panelHeaderInfo}</h1>
+        <h1>Отчет</h1>
     </header>
 
     <main>
-        <p>${panelDescriptionInfo}</p>
+        <p>Здесь вы можете открыть отчет преподавателя кафедры за семестр, добавлять записи.</p>
+        SEMESTER COMBOBOX & DEPARTMENT COMBOBOX + NEXT BUTTON > TEACHER COMBOBOX + NEXT BUTTON
         <div class="iDemandPancakeTableStyle">
             <table border="1px" cellpadding="0" cellspacing="0" >
                 <thead>
                 <tr>
-                    <!--<th width="10%">id</th>--><th>наименование</th><!--<th width="10%">rating</th>-->
+                    <th>Поток</th>
+                    <th>Дисциплина</th>
+                    <th>Тестовые данные (data__test)</th>
                     <th>действия</th>
                 </tr>
                 </thead>
                 <tbody>
-                <c:forEach var="dictionaryItem" items="${dictionaryItems}">
+                <c:forEach var="reportEntry" items="${reportEntries}">
                     <tr>
                         <td>
-                            ${dictionaryItem.name}
+                            ${reportEntry.flow.name}
                         </td>
                         <td>
-                            <a href="${pageContext.request.contextPath}${dictionaryTypePath}/delete/${dictionaryItem.id}.html">Удалить (-)</a><br/>
+                            ${reportEntry.disc.name}
+                        </td>
+                        <td>
+                            ${reportEntry.data__test}
+                        </td>
+                        <td>
+                            <a href="${pageContext.request.contextPath}/report/delete/${dictionaryItem.id}.html">Удалить (-)</a><br/>
+                            <a href="${pageContext.request.contextPath}/report/edit/${dictionaryItem.id}.html">Изменить</a><br/>
                         </td>
                     </tr>
                 </c:forEach>

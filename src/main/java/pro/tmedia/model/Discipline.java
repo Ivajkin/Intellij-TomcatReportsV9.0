@@ -9,7 +9,7 @@ import javax.persistence.Table;
  */
 
 @Entity
-@Table(name="dics")
+@Table(name="disc")
 public class Discipline extends DictionaryItem {
 }
 

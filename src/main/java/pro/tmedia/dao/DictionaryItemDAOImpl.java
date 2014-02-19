@@ -3,10 +3,7 @@ package pro.tmedia.dao;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
-import pro.tmedia.model.DictionaryItem;
-import pro.tmedia.model.Discipline;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
@@ -19,7 +16,7 @@ import java.util.List;
 @Transactional
 public abstract class DictionaryItemDAOImpl<T> implements DictionaryItemDAO<T> {
 
-    private Class<T> type;
+    private final Class<T> type;
 
     DictionaryItemDAOImpl() {
         Type t = getClass().getGenericSuperclass();
