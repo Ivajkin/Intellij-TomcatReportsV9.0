@@ -20,6 +20,11 @@ public class ReportEntryServiceImpl implements ReportEntryService {
     private ReportEntryDAO reportEntryDAO;
 
     @Override
+    public void create(ReportEntry reportEntry) {
+        reportEntryDAO.create(reportEntry);
+    }
+
+    @Override
     public List<ReportEntry> findItems() {
         return reportEntryDAO.findItems();
     }

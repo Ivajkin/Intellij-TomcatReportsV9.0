@@ -23,6 +23,11 @@ public class ReportEntryDAOImpl implements ReportEntryDAO {
         return sessionFactory.getCurrentSession();
     }
 
+    @Override
+    public void create(ReportEntry reportEntry) {
+        getCurrentSession().save(reportEntry);
+    }
+
     @SuppressWarnings("unchecked")
     @Override
     public List<ReportEntry> findItems() {

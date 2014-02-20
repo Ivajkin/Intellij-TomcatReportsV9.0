@@ -22,7 +22,31 @@
 
     <main>
         <p>Здесь вы можете открыть отчет преподавателя кафедры за семестр, добавлять записи.</p>
-        SEMESTER COMBOBOX & DEPARTMENT COMBOBOX + NEXT BUTTON > TEACHER COMBOBOX + NEXT BUTTON
+
+        <form:form method="POST" commandName="customerForm">
+            <form:errors path="*" cssClass="errorblock" element="div" />
+            <table>
+
+                <tr>
+                    <td>Поток:</td>
+                    <td><form:select path="semester">
+                        <form:option value="NONE" label="--- выберите ---" />
+                        <form:options items="${semesterList}" />
+                    </form:select>
+                    </td>
+                    <td><form:errors path="country" cssClass="error" /></td>
+                </tr>
+                <tr>
+                    department
+                    teacher
+                </tr>
+
+                <tr>
+                    <td colspan="3">Дальше <input type="submit" /></td>
+                </tr>
+            </table>
+        </form:form>
+
         <div class="iDemandPancakeTableStyle">
             <table border="1px" cellpadding="0" cellspacing="0" >
                 <thead>
@@ -54,8 +78,7 @@
                 </tbody>
             </table>
         </div>
-
-
+        <button>Сформировать отчет <!-- TODO: сформировать отчет JasperReports --> </button>
 
     </main>
 </div>

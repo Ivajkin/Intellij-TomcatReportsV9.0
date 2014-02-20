@@ -37,15 +37,22 @@
          },
          'reports': {
              label: 'Вывести отчет',
-             listPath: '/report/list.html',
-             createPath: '/report/actions.html',
+             listPath: '/report/select.html',
+             createPath: '/report/create.html',
              icon: 'reportIcon.png'
          }
      };
 
      function openDictionary(dictionaryID) {
-         $('#listPanelFrame').attr('src', dictionaries[dictionaryID]['listPath']);
-         $('#actionPanelFrame').attr('src', dictionaries[dictionaryID]['createPath']);
+
+         $('#listPanel').html('');
+         $.ajax(dictionaries[dictionaryID]['listPath']).success(function(data) {
+             $('#listPanel').html(data);
+         });
+         $('#actionPanel').html('');
+         $.ajax(dictionaries[dictionaryID]['createPath']).success(function(data) {
+             $('#actionPanel').html(data);
+         });
      }
 
      for(var dic in dictionaries) {

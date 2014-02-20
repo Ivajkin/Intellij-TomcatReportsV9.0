@@ -26,7 +26,7 @@ public abstract class DictionaryItemController<T> {
 
     @RequestMapping(value = "/create/process")
     public final ModelAndView creating(@ModelAttribute T dictionaryItem) {
-        ModelAndView modelAndView = createPage();
+        ModelAndView modelAndView = new ModelAndView("home");
 
         String message = createDictionaryItemDB(dictionaryItem);
         modelAndView.addObject("message", message );
@@ -50,7 +50,7 @@ public abstract class DictionaryItemController<T> {
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
     public final ModelAndView delete(@PathVariable Integer id) {
         String message = deleteItem(id);
-        ModelAndView modelAndView = listOfItems();
+        ModelAndView modelAndView = new ModelAndView("home");
         modelAndView.addObject("message", message);
         return modelAndView;
     }

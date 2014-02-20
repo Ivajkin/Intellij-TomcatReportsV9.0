@@ -12,4 +12,5 @@ import java.util.List;
 @Transactional
 public interface ReportEntryDAO {
     public List<ReportEntry> findItems();
+    public void create(ReportEntry reportEntry);
 }

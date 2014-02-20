@@ -19,6 +19,9 @@ public class DictionaryItem {
     public Integer getId() {
         return id;
     }
+    public void setId(Integer id) {
+        this.id = id;
+    }
     public String getName() {
         return name;
     }
@@ -26,7 +29,11 @@ public class DictionaryItem {
         this.name = name;
     }
 
-
     @OneToMany
     Set<ReportEntry> reports;
+
+    /*@Override
+    public String toString() {
+        return getName();
+    }    */
 }

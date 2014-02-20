@@ -10,4 +10,5 @@ import java.util.List;
  */
 public interface ReportEntryService {
     public List<ReportEntry> findItems();
+    public void create(ReportEntry reportEntry);
 }

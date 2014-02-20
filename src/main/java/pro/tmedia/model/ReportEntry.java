@@ -15,6 +15,7 @@ import java.util.Set;
 public class ReportEntry implements Serializable {
 
 
+    @GeneratedValue
     @Id
     private Integer id;
 

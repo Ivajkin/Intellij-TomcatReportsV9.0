@@ -29,13 +29,13 @@
     </main>
 </nav>
 
-<main class="main">
+<main id="listPanel" class="main">
     <iframe id="listPanelFrame" scrolling="no" src="${pageContext.request.contextPath}/discipline/list.html" seamless>
         <!-- //required for browser compatibility -->
     </iframe>
 </main>
 
-<section class="main">
+<section id="actionPanel" class="main">
     <iframe id="actionPanelFrame" scrolling="no" src="${pageContext.request.contextPath}/discipline/create.html" seamless>
         <!-- //required for browser compatibility -->
     </iframe>
