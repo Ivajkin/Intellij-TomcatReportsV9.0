@@ -11,12 +11,12 @@ import javax.persistence.Table;
 @Entity
 @Table(name="dept")
 public class Department extends DictionaryItem {
-    String head;
+    private String head;
 
-    void setHead(String head) {
+    public void setHead(String head) {
         this.head = head;
     }
-    String getHead() {
+    public String getHead() {
         return head;
     }
 }
