@@ -244,15 +244,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="DisciplineController.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pro/tmedia/controller/DisciplineController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="13" selection-start="716" selection-end="759" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="DepartmentController.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/pro/tmedia/controller/DepartmentController.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -271,10 +262,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Department.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Department.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/pro/tmedia/model/Department.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="11" selection-start="329" selection-end="329" vertical-scroll-proportion="0.5216606">
+            <state line="18" column="11" selection-start="329" selection-end="329" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="120" column="21" selection-start="4387" selection-end="4387" vertical-scroll-proportion="0.38563326">
               <folding />
             </state>
           </provider>
@@ -353,7 +353,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/create-report-entry.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/list-of-reports.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/report/select.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/pro/tmedia/service/FlowService.java" />
@@ -369,6 +368,7 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/department/create.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/department/list.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/pro/tmedia/model/Department.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -1318,13 +1318,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/pro/tmedia/model/Flow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="13" selection-start="185" selection-end="185" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/report/select.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="15.5">
@@ -1427,7 +1420,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pro/tmedia/model/Department.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="11" selection-start="329" selection-end="329" vertical-scroll-proportion="0.5216606">
+        <state line="18" column="11" selection-start="329" selection-end="329" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="120" column="21" selection-start="4387" selection-end="4387" vertical-scroll-proportion="0.38563326">
           <folding />
         </state>
       </provider>
