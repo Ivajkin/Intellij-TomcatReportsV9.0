@@ -274,8 +274,11 @@
       <file leaf-file-name="pom.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="120" column="21" selection-start="4387" selection-end="4387" vertical-scroll-proportion="0.38563326">
-              <folding />
+            <state line="120" column="21" selection-start="4387" selection-end="4387" vertical-scroll-proportion="0.4820416">
+              <folding>
+                <marker date="1393039675022" expanded="true" signature="3995:4193" placeholder="..." />
+                <marker date="1393039675022" expanded="true" signature="4214:4386" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -1427,8 +1430,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="120" column="21" selection-start="4387" selection-end="4387" vertical-scroll-proportion="0.38563326">
-          <folding />
+        <state line="120" column="21" selection-start="4387" selection-end="4387" vertical-scroll-proportion="0.4820416">
+          <folding>
+            <marker date="1393039675022" expanded="true" signature="3995:4193" placeholder="..." />
+            <marker date="1393039675022" expanded="true" signature="4214:4386" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
