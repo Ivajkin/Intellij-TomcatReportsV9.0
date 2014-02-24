@@ -28,4 +28,19 @@ public class ReportEntryServiceImpl implements ReportEntryService {
     public List<ReportEntry> findItems() {
         return reportEntryDAO.findItems();
     }
+
+    @Override
+    public ReportEntry find(Integer id) {
+        return reportEntryDAO.find(id);
+    }
+
+    @Override
+    public void update(ReportEntry reportEntry) {
+        reportEntryDAO.update(reportEntry);
+    }
+
+    @Override
+    public void delete(int id) {
+        reportEntryDAO.delete(id);
+    }
 }

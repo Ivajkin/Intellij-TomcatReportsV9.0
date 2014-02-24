@@ -13,4 +13,10 @@ import java.util.List;
 public interface ReportEntryDAO {
     public List<ReportEntry> findItems();
     public void create(ReportEntry reportEntry);
+
+    void update(ReportEntry reportEntry);
+    ReportEntry find(final Integer id);
+
+    public void delete(final int id);
+
 }

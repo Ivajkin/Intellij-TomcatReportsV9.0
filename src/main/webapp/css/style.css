@@ -98,7 +98,7 @@ nav.main {
 
 main.main {
     float: left;
-    width: 48%;
+    width: 53%;
     height: 100%;
 }
 
@@ -115,6 +115,10 @@ iframe {
     overflow: hidden;
 }
 
+#documentPrint {
+    margin-top: 10px;
+}
+
 footer {
     height: 10px;
     bottom: 0;
@@ -125,6 +129,10 @@ footer {
     padding-left: 10px;
     padding-top: 5px;
     margin: 0 !important;
+}
+
+footer #loading-bar {
+    /*('/img/loading-bar.gif'); */
 }
 
 .invisibleBackground {
@@ -210,7 +218,7 @@ footer {
                                                                                  border-width: 0 1px 1px 0;
                                                                                  text-align:left;
                                                                                  padding:7px;
-                                                                                 font-size:14px;
+                                                                                 font-size:9px;
                                                                                  font-family:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
                                                                                  font-weight:normal;
                                                                                  color:#594f4f;
@@ -230,7 +238,7 @@ footer {
     border:0px solid #594f4f;
     text-align:center;
     border-width:0px 0px 1px 1px;
-    font-size:16px;
+    font-size:10px;
     font-family:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-weight:bold;
     color:#e5fcc2;
@@ -247,4 +255,23 @@ footer {
 }
 .iDemandPancakeTableStyle tr:first-child td:last-child{
     border-width:0px 0px 1px 1px;
+}
+
+@media print {
+    nav.main {
+        display: none;
+    }
+    main.main {
+        width: 98%;
+    }
+    section.main {
+        display: none;
+    }
+    footer {
+        display: none;
+    }
+    #documentPrint {
+        display: none;
+    }
+
 }

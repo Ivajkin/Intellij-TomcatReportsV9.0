@@ -4,9 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pro.tmedia.dao.DepartmentDAO;
-import pro.tmedia.dao.DisciplineDAO;
 import pro.tmedia.model.Department;
-import pro.tmedia.model.Discipline;
 
 import java.util.List;
 
@@ -39,5 +37,10 @@ public class DepartmentServiceImpl implements DepartmentService {
     @Override
     public List<Department> findItems() {
         return departmentDAO.findItems();
+    }
+
+    @Override
+    public void update(Department dictionaryItem) {
+        departmentDAO.update(dictionaryItem);
     }
 }

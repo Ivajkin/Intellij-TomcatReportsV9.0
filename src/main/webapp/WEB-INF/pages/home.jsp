@@ -11,9 +11,21 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Домашняя страница</title>
     <link type="text/css" rel="stylesheet" href="<c:url value='/css/style.css'/>"/>
+    <link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/img/favicon.ico" />
     <script type="text/javascript" src="${pageContext.request.contextPath}/module/jquery-2.1.0.min.js"></script>
 </head>
 <body>
+<!--
+<img src="/img/advice.cat.png" style="
+    position: absolute;
+    max-width: 80px;
+                                        ">
+<div style="
+    width: 200px;
+    background: white;
+    height: 100px;
+">Чем я могу вам помочь?</div><input type="text">
+-->
 <header class="mainheader">
     <h1>TomcatReportsV9.0</h1>
     <h2>Ивайкин Т.С., ПО(м)-21</h2>
@@ -43,6 +55,7 @@
 
 <footer class="panel">
     ${message}
+    <img id="loading-bar" src="${pageContext.request.contextPath}/img/loading-bar.gif" alt="Загрузка...">
 </footer>
 
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/home.js"></script>

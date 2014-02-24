@@ -3,9 +3,7 @@ package pro.tmedia.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import pro.tmedia.dao.DisciplineDAO;
 import pro.tmedia.dao.TeacherDAO;
-import pro.tmedia.model.Discipline;
 import pro.tmedia.model.Teacher;
 
 import java.util.List;
@@ -39,5 +37,10 @@ public class TeacherServiceImpl implements TeacherService {
     @Override
     public List<Teacher> findItems() {
         return teacherDAO.findItems();
+    }
+
+    @Override
+    public void update(Teacher dictionaryItem) {
+        teacherDAO.update(dictionaryItem);
     }
 }

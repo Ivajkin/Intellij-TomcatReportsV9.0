@@ -10,13 +10,13 @@
 
 <div class="panel">
     <header>
-        <h1>Создать запись отчета</h1>
+        <h1>Изменить</h1>
     </header>
 
     <main>
-        <p>Здесь вы можете добавлять записи в отчет преподавателя кафедры за семестр.</p>
+        <p>Здесь вы можете изменять записи.</p>
 
-        <form:form method="POST" action="${pageContext.request.contextPath}${processPath}" commandName="reportEntryForm">
+        <form:form method="POST" action="${pageContext.request.contextPath}edit/" commandName="reportEntryForm">
             <form:errors path="*" cssClass="errorblock" element="div" />
             <table>
 

@@ -38,6 +38,7 @@
                         </td>
                         <td>
                             <a href="${pageContext.request.contextPath}${dictionaryTypePath}/delete/${dictionaryItem.id}.html">Удалить (-)</a><br/>
+                            <a href="${pageContext.request.contextPath}${dictionaryTypePath}/edit/${dictionaryItem.id}.html">Изменить</a>
                         </td>
                     </tr>
                 </c:forEach>

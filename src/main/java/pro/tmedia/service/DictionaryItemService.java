@@ -1,7 +1,5 @@
 package pro.tmedia.service;
 
-import pro.tmedia.model.Discipline;
-
 import java.util.List;
 
 /**
@@ -13,4 +11,5 @@ public interface DictionaryItemService<T> {
     public T find(int id);
     public void delete(int id);
     public List<T> findItems();
+    public void update(T dictionaryItem);
 }

@@ -56,13 +56,8 @@ public abstract class DictionaryItemDAOImpl<T> implements DictionaryItemDAO<T> {
         return getCurrentSession().createQuery("from " + type.getName()).list();
     }
 
-    /*
-     *  FOR UPDATE:
-     *  public void updateTeam(Team team) {
-     *      Team teamToUpdate = getTeam(team.getId());
-     *      teamToUpdate.setName(team.getName());
-     *      teamToUpdate.setRating(team.getRating());
-     *      getCurrentSession().update(teamToUpdate);
-     *  }
-     */
+    @Override
+    public void update(T dictionaryItem) {
+        getCurrentSession().update(dictionaryItem);
+    }
 }

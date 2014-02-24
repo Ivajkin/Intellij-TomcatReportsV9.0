@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-import pro.tmedia.model.Discipline;
 
 import java.util.List;
 
@@ -20,6 +19,7 @@ public abstract class DictionaryItemController<T> {
         ModelAndView modelAndView = new ModelAndView("create-dictionary-item-form");
         modelAndView.addObject("dictionaryItem", getNewDictionaryItem());
         modelAndView.addObject("dictionaryTypePath", getDictionaryTypePath());
+        modelAndView.addObject("processPath", "/create/process");
 
         return modelAndView;
     }
@@ -54,46 +54,30 @@ public abstract class DictionaryItemController<T> {
         modelAndView.addObject("message", message);
         return modelAndView;
     }
-    /*
-    FOR UPDATE:
-    @RequestMapping(value="/team/edit/{id}", method=RequestMethod.GET)
-    39
-    public ModelAndView editTeamPage(@PathVariable Integer id) {
-        40
-        ModelAndView modelAndView = new ModelAndView("edit-team-form");
-        41
-        Team team = teamService.getTeam(id);
-        42
-        modelAndView.addObject("team",team);
-        43
-        return modelAndView;
-        44
-    }
-    @RequestMapping(value="/team/edit/{id}", method=RequestMethod.POST)
-47
-    public ModelAndView edditingTeam(@ModelAttribute Team team, @PathVariable Integer id) {
-48
 
-49
+    @RequestMapping(value="/edit/{id}", method=RequestMethod.GET)
+    public ModelAndView editDictionaryItem(@PathVariable Integer id) {
+
+        ModelAndView modelAndView = new ModelAndView("create-dictionary-item-form");
+
+        T dictionaryItem = find(id);
+        modelAndView.addObject("dictionaryItem",dictionaryItem);
+        modelAndView.addObject("dictionaryTypePath", getDictionaryTypePath());
+        modelAndView.addObject("processPath", "/edit/"+id);
+
+        return modelAndView;
+    }
+    @RequestMapping(value="/edit/{id}", method=RequestMethod.POST)
+    public ModelAndView edditingDictionaryItem(@ModelAttribute T dictionaryItem, @PathVariable Integer id) {
+
         ModelAndView modelAndView = new ModelAndView("home");
-50
+        updateDictionaryItem(dictionaryItem);
 
-51
-        teamService.updateTeam(team);
-52
-
-53
-        String message = "Team was successfully edited.";
-54
+        String message = "Объект словаря был успешно изменен.";
         modelAndView.addObject("message", message);
-55
-
-56
         return modelAndView;
-57
     }
 
-           */
 
     protected abstract T getNewDictionaryItem();
     protected abstract String createDictionaryItemDB(T item);
@@ -102,4 +86,6 @@ public abstract class DictionaryItemController<T> {
     protected abstract String getDictionaryTypePath();
     protected abstract String getPanelHeaderInfo();
     protected abstract String getPanelDescriptionInfo();
+    protected abstract T find(final Integer id);
+    protected abstract void updateDictionaryItem(T dictionaryItem);
 }

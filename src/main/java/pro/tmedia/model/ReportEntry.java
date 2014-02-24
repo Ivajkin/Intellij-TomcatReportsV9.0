@@ -1,17 +1,14 @@
 package pro.tmedia.model;
 
-import org.hibernate.annotations.ForeignKey;
-
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Set;
 
 /**
  * User: Ivaykin Timofey
  * Date: 2/14/14
  */
 @Entity
-@Table(name="rept")
+@Table(name="report_entry")
 public class ReportEntry implements Serializable {
 
 
@@ -28,59 +25,48 @@ public class ReportEntry implements Serializable {
     private Set<Task> tasks;*/
 
     @ManyToOne
-    private Flow flow;
-    @ManyToOne
-    private Discipline disc;
-    @ManyToOne
-    private Semester sem;
+    private Report report;
 
-    private Integer data__test;
+    private Integer stud_count_plan;
+    private Integer lection_count_plan;
+    private Integer stud_count_fact;
+    private Integer lection_count_fact;
 
-    @ManyToOne
-    private Department dept;
 
-    @ManyToOne
-    private Teacher teacher;
-
-    public Flow getFlow() {
-        return flow;
+    public Integer getStud_count_plan() {
+        return stud_count_plan;
     }
-    public void setFlow(Flow flow) {
-        this.flow = flow;
+    public void setStud_count_plan(Integer stud_count_plan) {
+        this.stud_count_plan = stud_count_plan;
     }
 
-    public Discipline getDisc() {
-        return disc;
+    public Integer getLection_count_plan() {
+        return lection_count_plan;
     }
-    public void setDisc(Discipline disc) {
-        this.disc = disc;
-    }
-
-    public Semester getSem() {
-        return sem;
-    }
-    public void setSem(Semester sem) {
-        this.sem = sem;
+    public void setLection_count_plan(Integer lection_count_plan) {
+        this.lection_count_plan = lection_count_plan;
     }
 
-    public Integer getData__test() {
-        return data__test;
+
+    public Integer getStud_count_fact() {
+        return stud_count_fact;
     }
-    public void setData__test(Integer data__test) {
-        this.data__test = data__test;
+    public void setStud_count_fact(Integer stud_count_fact) {
+        this.stud_count_fact = stud_count_fact;
     }
 
-    public Department getDept() {
-        return dept;
+    public Integer getLection_count_fact() {
+        return lection_count_fact;
     }
-    public void setDept(Department dept) {
-        this.dept = dept;
+    public void setLection_count_fact(Integer lection_count_fact) {
+        this.lection_count_fact = lection_count_fact;
     }
 
-    public Teacher getTeacher() {
-        return teacher;
+
+    public Integer getId() {
+        return id;
     }
-    public void setTeacher(Teacher teacher) {
-        this.teacher = teacher;
+    public void setId(Integer id) {
+        this.id = id;
     }
 }

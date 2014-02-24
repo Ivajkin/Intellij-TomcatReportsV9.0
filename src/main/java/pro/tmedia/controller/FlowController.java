@@ -56,4 +56,14 @@ public class FlowController extends DictionaryItemController<Flow> {
     protected String getPanelDescriptionInfo() {
         return "Здесь вы можете видеть список потоков, удалять и добавлять.";
     }
+
+    @Override
+    protected Flow find(Integer id) {
+        return flowService.find(id);
+    }
+
+    @Override
+    protected void updateDictionaryItem(Flow dictionaryItem) {
+        flowService.update(dictionaryItem);
+    }
 }

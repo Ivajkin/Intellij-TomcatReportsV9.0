@@ -23,37 +23,20 @@
     <main>
         <p>Здесь вы можете открыть отчет преподавателя кафедры за семестр, добавлять записи.</p>
 
-        <form:form method="POST" commandName="customerForm">
-            <form:errors path="*" cssClass="errorblock" element="div" />
-            <table>
-
-                <tr>
-                    <td>Поток:</td>
-                    <td><form:select path="semester">
-                        <form:option value="NONE" label="--- выберите ---" />
-                        <form:options items="${semesterList}" />
-                    </form:select>
-                    </td>
-                    <td><form:errors path="country" cssClass="error" /></td>
-                </tr>
-                <tr>
-                    department
-                    teacher
-                </tr>
-
-                <tr>
-                    <td colspan="3">Дальше <input type="submit" /></td>
-                </tr>
-            </table>
-        </form:form>
 
         <div class="iDemandPancakeTableStyle">
             <table border="1px" cellpadding="0" cellspacing="0" >
                 <thead>
                 <tr>
+                    <th>Семестр</th>
+                    <th>Кафедра</th>
+                    <th>Зав. кафедрой</th>
+                    <th>Преподаватель</th>
+
                     <th>Поток</th>
                     <th>Дисциплина</th>
-                    <th>Тестовые данные (data__test)</th>
+                    <th>Число студ.</th>
+                    <th>Лекции</th>
                     <th>действия</th>
                 </tr>
                 </thead>
@@ -61,24 +44,41 @@
                 <c:forEach var="reportEntry" items="${reportEntries}">
                     <tr>
                         <td>
+                                ${reportEntry.sem.name}
+                        </td>
+                        <td>
+                                ${reportEntry.dept.name}
+                        </td>
+                        <td>
+                                ${reportEntry.dept.head}
+                        </td>
+                        <td>
+                                ${reportEntry.teacher.name}
+                        </td>
+
+                        <td>
                             ${reportEntry.flow.name}
                         </td>
                         <td>
                             ${reportEntry.disc.name}
                         </td>
                         <td>
-                            ${reportEntry.data__test}
+                            ${reportEntry.stud_count}
                         </td>
                         <td>
-                            <a href="${pageContext.request.contextPath}/report/delete/${dictionaryItem.id}.html">Удалить (-)</a><br/>
-                            <a href="${pageContext.request.contextPath}/report/edit/${dictionaryItem.id}.html">Изменить</a><br/>
+                                ${reportEntry.lection_count}
+                        </td>
+                        <td>
+                            <a href="${pageContext.request.contextPath}/report/delete/${reportEntry.id}.html">Удалить (-)</a><br/>
+                            <a href="${pageContext.request.contextPath}/report/edit/${reportEntry.id}.html">Изменить</a><br/>
                         </td>
                     </tr>
                 </c:forEach>
                 </tbody>
             </table>
         </div>
-        <button>Сформировать отчет <!-- TODO: сформировать отчет JasperReports --> </button>
+        <!--<button>Сформировать отчет--> <!-- TODO: сформировать отчет JasperReports --> <!--</button>   -->
+        <button id="documentPrint" onclick="window.print();">Сформировать отчет</button>
 
     </main>
 </div>

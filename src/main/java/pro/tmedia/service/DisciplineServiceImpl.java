@@ -38,4 +38,9 @@ public class DisciplineServiceImpl implements DisciplineService {
     public List<Discipline> findItems() {
         return disciplineDAO.findItems();
     }
+
+    @Override
+    public void update(Discipline dictionaryItem) {
+        disciplineDAO.update(dictionaryItem);
+    }
 }

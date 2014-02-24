@@ -1,7 +1,6 @@
 package pro.tmedia.dao;
 
 import org.springframework.transaction.annotation.Transactional;
-import pro.tmedia.model.DictionaryItem;
 
 import java.util.List;
 
@@ -15,4 +14,6 @@ public interface DictionaryItemDAO<T> {
     public T find(int id);
     public void delete(int id);
     public List<T> findItems();
+
+    public void update(T dictionaryItem);
 }

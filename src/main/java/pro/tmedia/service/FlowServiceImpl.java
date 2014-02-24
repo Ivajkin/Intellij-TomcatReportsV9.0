@@ -3,9 +3,7 @@ package pro.tmedia.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import pro.tmedia.dao.DisciplineDAO;
 import pro.tmedia.dao.FlowDAO;
-import pro.tmedia.model.Discipline;
 import pro.tmedia.model.Flow;
 
 import java.util.List;
@@ -39,5 +37,10 @@ public class FlowServiceImpl implements FlowService {
     @Override
     public List<Flow> findItems() {
         return flowDAO.findItems();
+    }
+
+    @Override
+    public void update(Flow dictionaryItem) {
+        flowDAO.update(dictionaryItem);
     }
 }

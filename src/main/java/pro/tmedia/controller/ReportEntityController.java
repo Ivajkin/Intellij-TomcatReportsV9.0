@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -35,7 +36,7 @@ public class ReportEntityController {
     @Autowired
     private FlowService flowService;
 
-    @RequestMapping(value = "/select")
+    /*@RequestMapping(value = "/select")
     public final ModelAndView selectReport() {
         ModelAndView modelAndView = new ModelAndView("/report/select");
 
@@ -55,11 +56,59 @@ public class ReportEntityController {
         modelAndView.addObject("teacherList", teacherList);
 
         return modelAndView;
+    } */
+
+    @RequestMapping(value="/edit/{id}", method=RequestMethod.GET)
+    public ModelAndView editReportEntryPage(@PathVariable Integer id) {
+
+        ModelAndView modelAndView = new ModelAndView("/report/create");
+        ReportEntry reportEntry = reportEntryService.find(id);
+        modelAndView.addObject("reportEntryForm", reportEntry);
+
+
+        List<Semester> semesterList = semesterService.findItems();
+        modelAndView.addObject("semesterList", semesterList);
+
+        List<Department> departmentList = departmentService.findItems();
+        modelAndView.addObject("departmentList", departmentList);
+
+        List<Teacher> teacherList = teacherService.findItems();
+        modelAndView.addObject("teacherList", teacherList);
+
+        List<Discipline> disciplineList = disciplineService.findItems();
+        modelAndView.addObject("disciplineList", disciplineList);
+
+        modelAndView.addObject("processPath", "/report/edit/"+id);
+
+        List<Flow> flowList = flowService.findItems();
+        modelAndView.addObject("flowList", flowList);
+
+
+        return modelAndView;
+    }
+    @RequestMapping(value="/edit/{id}", method=RequestMethod.POST)
+    public ModelAndView edditingReportEntry(@ModelAttribute ReportEntry reportEntryForm, @PathVariable Integer id) {
+        ModelAndView modelAndView = new ModelAndView("home");
+        reportEntryService.update(reportEntryForm);
+
+        String message = "Запись отчета (нагрузка) успешно изменена.";
+        modelAndView.addObject("message", message);
+        return modelAndView;
+    }
+
+    @RequestMapping(value="/delete/{id}", method=RequestMethod.GET)
+    public ModelAndView deleteReportEntry(@PathVariable Integer id) {
+        ModelAndView modelAndView = new ModelAndView("home");
+        reportEntryService.delete(id);
+
+        String message = "Запись отчета (нагрузка) успешно удалена.";
+        modelAndView.addObject("message", message);
+        return modelAndView;
     }
 
     @RequestMapping(value = "/list")
     public final ModelAndView listOfItems() {
-        ModelAndView modelAndView = new ModelAndView("/report/select");
+        ModelAndView modelAndView = new ModelAndView("/report/list");
 
         modelAndView.addObject("reportSelectForm", new ReportEntry());
         List<ReportEntry> reportEntries = reportEntryService.findItems();
@@ -68,19 +117,19 @@ public class ReportEntityController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/actions")
+    /*@RequestMapping(value = "/actions")
      public final ModelAndView actionPage(@ModelAttribute ReportEntry reportEntry) {
         ModelAndView modelAndView = new ModelAndView("create-report-entry");
 
         modelAndView.addObject("newReportEntry", new ReportEntry());
 
         return modelAndView;
-    }
+    }   */
 
     @RequestMapping(value = "/create")
     public final ModelAndView create() {
         ModelAndView modelAndView = new ModelAndView("/report/create");
-        modelAndView.addObject("reportSelectForm", new ReportEntry());
+        modelAndView.addObject("reportEntryForm", new ReportEntry());
 
 
         List<Semester> semesterList = semesterService.findItems();
@@ -98,16 +147,18 @@ public class ReportEntityController {
         List<Flow> flowList = flowService.findItems();
         modelAndView.addObject("flowList", flowList);
 
+        modelAndView.addObject("processPath", "/report/create/process");
+
 
         return modelAndView;
     }
 
     @RequestMapping(value = "/create/process", method = RequestMethod.POST)
-    public final ModelAndView creating(@ModelAttribute ReportEntry reportSelectForm, BindingResult bindingResult) {
+    public final ModelAndView creating(@ModelAttribute ReportEntry reportEntryForm, BindingResult bindingResult) {
 
         ModelAndView modelAndView = new ModelAndView("home");
 
-        reportEntryService.create(reportSelectForm);
+        reportEntryService.create(reportEntryForm);
 
         if (bindingResult.hasErrors()) {
             String message = "Ошибка bindingResult.hasErrors.";

@@ -3,9 +3,7 @@ package pro.tmedia.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import pro.tmedia.dao.DisciplineDAO;
 import pro.tmedia.dao.SemesterDAO;
-import pro.tmedia.model.Discipline;
 import pro.tmedia.model.Semester;
 
 import java.util.List;
@@ -39,5 +37,10 @@ public class SemesterServiceImpl implements SemesterService {
     @Override
     public List<Semester> findItems() {
         return semesterDAO.findItems();
+    }
+
+    @Override
+    public void update(Semester dictionaryItem) {
+        semesterDAO.update(dictionaryItem);
     }
 }

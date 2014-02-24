@@ -56,4 +56,14 @@ public class SemesterController extends DictionaryItemController<Semester> {
     protected String getPanelDescriptionInfo() {
         return "Здесь вы можете видеть список семестров, удалять и добавлять.";
     }
+
+    @Override
+    protected Semester find(Integer id) {
+        return semesterService.find(id);
+    }
+
+    @Override
+    protected void updateDictionaryItem(Semester dictionaryItem) {
+        semesterService.update(dictionaryItem);
+    }
 }

@@ -4,6 +4,8 @@
  */
  $(document).ready(function() {
 
+     $('#loading-bar').hide();
+
      var dictionaries = {
          'disciplines': {
              label: 'Список дисциплин',
@@ -37,17 +39,20 @@
          },
          'reports': {
              label: 'Вывести отчет',
-             listPath: '/report/select.html',
+             listPath: '/report/list.html',
              createPath: '/report/create.html',
              icon: 'reportIcon.png'
          }
      };
 
      function openDictionary(dictionaryID) {
+         $('#loading-bar').show();
 
          $('#listPanel').html('');
          $.ajax(dictionaries[dictionaryID]['listPath']).success(function(data) {
              $('#listPanel').html(data);
+
+             $('#loading-bar').hide();
          });
          $('#actionPanel').html('');
          $.ajax(dictionaries[dictionaryID]['createPath']).success(function(data) {

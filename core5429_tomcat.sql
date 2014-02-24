@@ -140,21 +140,19 @@ INSERT INTO `teacher` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `rept`
+-- Table structure for table `report`
 --
 
-CREATE TABLE IF NOT EXISTS `rept` (
+CREATE TABLE IF NOT EXISTS `report` (
   `id` int(11) not null AUTO_INCREMENT,
   `flow_id` int(11) not null,
   `disc_id` int(11) not null,
---  `year` int(11) not null,
   `sem_id` int(11) not null,
-  `data__test` int(11) not null,
   `dept_id` int(11) not null,
   `teacher_id` int(11) not null,
   
   PRIMARY KEY (`id`),
-  UNIQUE KEY `UQ__rept__0000000000001040` (`id`),
+  UNIQUE KEY `UQ__report__0000000000001040` (`id`),
   
   foreign key(`flow_id`)
 			references flow(id)
@@ -174,13 +172,49 @@ CREATE TABLE IF NOT EXISTS `rept` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Dumping data for table `rept`
+-- Dumping data for table `report`
 --
 
-INSERT INTO `rept` (`flow_id`, `disc_id`, `sem_id`, `data__test`, `dept_id`, `teacher_id`) VALUES
-(1, 1, 1, 1, 1, 1);
+INSERT INTO `report` (`flow_id`, `disc_id`, `sem_id`, `dept_id`, `teacher_id`) VALUES
+(1, 1, 1, 1, 1);
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `report_entry`
+--
+
+CREATE TABLE IF NOT EXISTS `report_entry` (
+  `id` int(11) not null AUTO_INCREMENT,
+  `report_id` int(11) not null,
+
+  `stud_count_plan` int(11) not null,
+  `lection_count_plan` int(11) not null,
+  `stud_count_fact` int(11) not null,
+  `lection_count_fact` int(11) not null,
+
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `UQ__report_entry__0000000000002040` (`id`),
+
+  foreign key(`report_id`)
+  references report(id)
+    on delete cascade
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Dumping data for table `report_entry`
+--
+
+INSERT INTO `report_entry` (`report_id`, `stud_count_plan`, `lection_count_plan`, `stud_count_fact`, `lection_count_fact`) VALUES
+(1, 60, 0, 75, 10);
 
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+-- CREATE USER 'core5429_tomcat'@ '%' IDENTIFIED BY  'nNTTsq8VZnTnLh9q';
+-- GRANT USAGE ON * . * TO  'core5429_tomcat'@ '%' IDENTIFIED BY  'nNTTsq8VZnTnLh9q' WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0 ;
+-- GRANT ALL PRIVILEGES ON  `core5429\_tomcat` . * TO  'core5429_tomcat'@'%' WITH GRANT OPTION ;
