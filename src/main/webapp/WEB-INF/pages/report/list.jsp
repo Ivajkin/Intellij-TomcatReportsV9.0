@@ -21,40 +21,30 @@
     </header>
 
     <main>
-        <p>Здесь вы можете открыть отчет преподавателя кафедры за семестр, добавлять записи.</p>
+        <p>Отчет преподавателя кафедры за семестр, добавляйте и изменяйте записи.</p>
 
+        <ul>
+            <li>Семестр: ${report.sem.name}</li>
+            <li>Кафедра: ${report.dept.name}</li>
+            <li>Зав. кафедрой: ${report.dept.head}</li>
+            <li>Преподаватель: ${report.teacher.name}</li>
+        </ul>
 
         <div class="iDemandPancakeTableStyle">
             <table border="1px" cellpadding="0" cellspacing="0" >
                 <thead>
                 <tr>
-                    <th>Семестр</th>
-                    <th>Кафедра</th>
-                    <th>Зав. кафедрой</th>
-                    <th>Преподаватель</th>
 
                     <th>Поток</th>
                     <th>Дисциплина</th>
-                    <th>Число студ.</th>
-                    <th>Лекции</th>
+                    <th>Число студ. (план)</th>
+                    <th>Лекции (план)</th>
                     <th>действия</th>
                 </tr>
                 </thead>
                 <tbody>
                 <c:forEach var="reportEntry" items="${reportEntries}">
                     <tr>
-                        <td>
-                                ${reportEntry.sem.name}
-                        </td>
-                        <td>
-                                ${reportEntry.dept.name}
-                        </td>
-                        <td>
-                                ${reportEntry.dept.head}
-                        </td>
-                        <td>
-                                ${reportEntry.teacher.name}
-                        </td>
 
                         <td>
                             ${reportEntry.flow.name}
@@ -63,10 +53,10 @@
                             ${reportEntry.disc.name}
                         </td>
                         <td>
-                            ${reportEntry.stud_count}
+                            ${reportEntry.stud_count_plan}
                         </td>
                         <td>
-                                ${reportEntry.lection_count}
+                                ${reportEntry.lection_count_plan}
                         </td>
                         <td>
                             <a href="${pageContext.request.contextPath}/report/delete/${reportEntry.id}.html">Удалить (-)</a><br/>

@@ -1,7 +1,10 @@
 package pro.tmedia.model;
 
+import org.hibernate.annotations.ForeignKey;
+
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  * User: Ivaykin Timofey
@@ -24,14 +27,55 @@ public class ReportEntry implements Serializable {
     )
     private Set<Task> tasks;*/
 
-    @ManyToOne
+
+    /*
+    @JoinTable(
+            name = "report_entry",
+            joinColumns = @JoinColumn(name = "id", table = "report"),
+            inverseJoinColumns = @JoinColumn(name = "report_id", table = "report_entry")
+    )         */
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="report_id")
+    //@ForeignKey(name = "report_id")
     private Report report;
+
+    @ManyToOne
+    private Flow flow;
+    @ManyToOne
+    private Discipline disc;
 
     private Integer stud_count_plan;
     private Integer lection_count_plan;
     private Integer stud_count_fact;
     private Integer lection_count_fact;
 
+
+    public Report getReport() {
+        return report;
+    }
+    public void setReport(Report report) {
+        this.report = report;
+        if(report.getReportEntries() == null) {
+            report.setReportEntries(new ArrayList<ReportEntry>());
+        }
+        if(!report.getReportEntries().contains(this)) {
+            report.getReportEntries().add(this);
+        }
+    }
+
+    public Flow getFlow() {
+        return flow;
+    }
+    public void setFlow(Flow flow) {
+        this.flow = flow;
+    }
+
+    public Discipline getDisc() {
+        return disc;
+    }
+    public void setDisc(Discipline disc) {
+        this.disc = disc;
+    }
 
     public Integer getStud_count_plan() {
         return stud_count_plan;

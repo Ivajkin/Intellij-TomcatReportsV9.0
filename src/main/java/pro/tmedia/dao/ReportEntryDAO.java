@@ -11,7 +11,7 @@ import java.util.List;
  */
 @Transactional
 public interface ReportEntryDAO {
-    public List<ReportEntry> findItems();
+    public List<ReportEntry> findItems(final Integer sem_id, final Integer dept_id, final Integer teacher_id);
     public void create(ReportEntry reportEntry);
 
     void update(ReportEntry reportEntry);

@@ -19,22 +19,36 @@
     <main>
         <p>Здесь вы можете открыть отчет преподавателя кафедры за семестр.</p>
 
-        <form:form method="POST" action="/report/list" commandName="reportSelectForm">
+        <form:form method="GET" action="/report/list" commandName="reportSelectForm">
             <form:errors path="*" cssClass="errorblock" element="div" />
             <table>
 
                 <tr>
                     <td>Поток:</td>
-                    <td><form:select path="sem">
+                    <td><form:select path="sem.id">
                         <form:option value="NONE" label="--- выберите ---" />
-                        <form:options items="${semesterList}" />
+                        <form:options items="${semesterList}" itemValue="id" itemLabel="name" />
                     </form:select>
                     </td>
                     <td><form:errors path="sem" cssClass="error" /></td>
                 </tr>
                 <tr>
-                    department
-                    teacher
+                    <td>Кафедра:</td>
+                    <td><form:select path="dept.id">
+                        <form:option value="NONE" label="--- выберите ---" />
+                        <form:options items="${departmentList}" itemValue="id" itemLabel="name" />
+                    </form:select>
+                    </td>
+                    <td><form:errors path="dept" cssClass="error" /></td>
+                </tr>
+                <tr>
+                    <td>Преподаватель:</td>
+                    <td><form:select path="teacher.id">
+                        <form:option value="NONE" label="--- выберите ---" />
+                        <form:options items="${teacherList}" itemValue="id" itemLabel="name" />
+                    </form:select>
+                    </td>
+                    <td><form:errors path="teacher" cssClass="error" /></td>
                 </tr>
 
                 <tr>

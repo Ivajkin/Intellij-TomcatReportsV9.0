@@ -26,6 +26,8 @@ public class ReportEntityController {
     @Autowired
     private ReportEntryService reportEntryService;
     @Autowired
+    private ReportService reportService;
+    @Autowired
     private SemesterService semesterService;
     @Autowired
     private DepartmentService departmentService;
@@ -36,27 +38,25 @@ public class ReportEntityController {
     @Autowired
     private FlowService flowService;
 
-    /*@RequestMapping(value = "/select")
+    // TODO: доделать поля выбора отчета
+    @RequestMapping(value = "/select")
     public final ModelAndView selectReport() {
         ModelAndView modelAndView = new ModelAndView("/report/select");
 
-        modelAndView.addObject("reportSelectForm", new ReportEntry());
-        List<ReportEntry> reportEntries = reportEntryService.findItems();
-        modelAndView.addObject("reportEntries", reportEntries);
+        modelAndView.addObject("reportSelectForm", new Report());
+        //List<ReportEntry> reportEntries = reportEntryService.findItems();
+        //modelAndView.addObject("reportEntries", reportEntries);
 
 
         List<Semester> semesterList = semesterService.findItems();
         modelAndView.addObject("semesterList", semesterList);
-
-
-
         List<Department> departmentList = departmentService.findItems();
         modelAndView.addObject("departmentList", departmentList);
         List<Teacher> teacherList = teacherService.findItems();
         modelAndView.addObject("teacherList", teacherList);
 
         return modelAndView;
-    } */
+    }
 
     @RequestMapping(value="/edit/{id}", method=RequestMethod.GET)
     public ModelAndView editReportEntryPage(@PathVariable Integer id) {
@@ -106,13 +106,27 @@ public class ReportEntityController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/list")
-    public final ModelAndView listOfItems() {
+    @RequestMapping(value = "/list"/*/{sem_id}/{dept_id}/{teacher_id}*/, method=RequestMethod.GET)
+    public final ModelAndView listOfItems
+                        (@ModelAttribute Report reportSelectForm
+                        /*@PathVariable Integer sem_id,
+                         @PathVariable Integer dept_id,
+                         @PathVariable Integer teacher_id*/) {
         ModelAndView modelAndView = new ModelAndView("/report/list");
 
         modelAndView.addObject("reportSelectForm", new ReportEntry());
-        List<ReportEntry> reportEntries = reportEntryService.findItems();
-        modelAndView.addObject("reportEntries", reportEntries);
+
+        /*List<ReportEntry> reportEntries = reportEntryService.findItems(reportSelectForm.getSem().getId(),
+                reportSelectForm.getDept().getId(), reportSelectForm.getTeacher().getId()); */
+        List<ReportEntry> reportEntries = reportEntryService.findItems(reportSelectForm.getSem().getId(),
+                reportSelectForm.getDept().getId(),
+                reportSelectForm.getTeacher().getId());
+        modelAndView.addObject("reportEntries", reportEntries/*reportSelectForm.getReportEntries()*/);
+
+        if(reportEntries.size() > 0)
+            modelAndView.addObject("report", reportEntries.get(0).getReport());
+        else
+            modelAndView.addObject("report", reportSelectForm);
 
         return modelAndView;
     }
@@ -129,7 +143,7 @@ public class ReportEntityController {
     @RequestMapping(value = "/create")
     public final ModelAndView create() {
         ModelAndView modelAndView = new ModelAndView("/report/create");
-        modelAndView.addObject("reportEntryForm", new ReportEntry());
+        modelAndView.addObject("reportEntryFullForm", new ReportWithReportEntry());
 
 
         List<Semester> semesterList = semesterService.findItems();
@@ -154,11 +168,20 @@ public class ReportEntityController {
     }
 
     @RequestMapping(value = "/create/process", method = RequestMethod.POST)
-    public final ModelAndView creating(@ModelAttribute ReportEntry reportEntryForm, BindingResult bindingResult) {
+    public final ModelAndView creating(@ModelAttribute ReportWithReportEntry reportEntryFullForm, BindingResult bindingResult) {
 
         ModelAndView modelAndView = new ModelAndView("home");
 
-        reportEntryService.create(reportEntryForm);
+        if(/*reportService.find(reportEntryFullForm.report.getId())*/reportEntryFullForm.report.getId() == null) {
+            Report rep = new Report();
+            rep.setSem(reportEntryFullForm.report.getSem());
+            rep.setDept(reportEntryFullForm.report.getDept());
+            rep.setTeacher(reportEntryFullForm.report.getTeacher());
+            reportService.create(rep);
+            reportEntryFullForm.report = rep;
+        }
+        reportEntryFullForm.reportEntry.setReport(reportEntryFullForm.report);
+        reportEntryService.create(reportEntryFullForm.reportEntry);
 
         if (bindingResult.hasErrors()) {
             String message = "Ошибка bindingResult.hasErrors.";
@@ -171,7 +194,7 @@ public class ReportEntityController {
         return modelAndView;
     }
 
-    protected Map referenceData(HttpServletRequest request) throws Exception {
+    /*protected Map referenceData(HttpServletRequest request) throws Exception {
 
         Map referenceData = new HashMap();
 
@@ -183,5 +206,5 @@ public class ReportEntityController {
         referenceData.put("semesterList", semesterMap);
 
         return referenceData;
-    }
+    }  */
 }

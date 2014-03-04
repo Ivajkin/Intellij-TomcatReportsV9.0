@@ -1,7 +1,12 @@
 package pro.tmedia.model;
 
+import org.hibernate.annotations.ForeignKey;
+
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Collection;
+import java.util.List;
+import java.util.Set;
 
 /**
  * User: Ivaykin Timofey
@@ -12,15 +17,43 @@ import java.io.Serializable;
 public class Report implements Serializable {
 
 
+
     @GeneratedValue
     @Id
     private Integer id;
 
+    public List<ReportEntry> getReportEntries() {
+        return reportEntries;
+    }
 
-    @ManyToOne
-    private Flow flow;
-    @ManyToOne
-    private Discipline disc;
+    public void setReportEntries(List<ReportEntry> reportEntries) {
+        this.reportEntries = reportEntries;
+    }
+
+    /*@OneToMany(mappedBy = "report")
+    @JoinTable(
+            name = "report",
+            joinColumns = @JoinColumn(name = "project_id"),
+            inverseJoinColumns = @JoinColumn(name = "task_id")
+    ) */
+
+    //@ForeignKey(name = "id")
+    @OneToMany(mappedBy = "report")
+    /*@JoinTable(
+            name = "report",
+            joinColumns = @JoinColumn(name = "report_id", table = "report_entry"),
+            inverseJoinColumns = @JoinColumn(name = "id", table = "report")
+    ) */
+    private List<ReportEntry> reportEntries;
+
+
+    public void addReportEntry(ReportEntry reportEntry) {
+        this.reportEntries.add(reportEntry);
+        if(reportEntry.getReport() != this) {
+            reportEntry.setReport(this);
+        }
+    }
+
     @ManyToOne
     private Semester sem;
 
@@ -30,19 +63,6 @@ public class Report implements Serializable {
     @ManyToOne
     private Teacher teacher;
 
-    public Flow getFlow() {
-        return flow;
-    }
-    public void setFlow(Flow flow) {
-        this.flow = flow;
-    }
-
-    public Discipline getDisc() {
-        return disc;
-    }
-    public void setDisc(Discipline disc) {
-        this.disc = disc;
-    }
 
     public Semester getSem() {
         return sem;

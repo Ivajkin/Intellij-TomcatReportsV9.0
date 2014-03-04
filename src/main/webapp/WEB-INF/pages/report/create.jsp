@@ -16,71 +16,85 @@
     <main>
         <p>Здесь вы можете добавлять записи в отчет преподавателя кафедры за семестр.</p>
 
-        <form:form method="POST" action="${pageContext.request.contextPath}${processPath}" commandName="reportEntryForm">
+        <form:form method="POST" action="${pageContext.request.contextPath}${processPath}" commandName="reportEntryFullForm">
             <form:errors path="*" cssClass="errorblock" element="div" />
             <table>
 
                 <tr>
                     <td>Семестр:</td>
-                    <td><form:select path="sem.id">
+                    <td><form:select path="report.sem.id">
                         <c:if test="${!processPath.contains(\"edit\")}"> <form:option value="NONE" label="--- выберите ---" /> </c:if>
                         <form:options items="${semesterList}" itemValue="id" itemLabel="name" />
                     </form:select>
                     </td>
-                    <td><form:errors path="sem" cssClass="error" /></td>
+                    <td><form:errors path="report.sem" cssClass="error" /></td>
                 </tr>
 
                 <tr>
                     <td>Кафедра:</td>
-                    <td><form:select path="dept.id">
+                    <td><form:select path="report.dept.id">
                         <c:if test="${!processPath.contains(\"edit\")}"> <form:option value="NONE" label="--- выберите ---" /> </c:if>
                         <form:options items="${departmentList}" itemValue="id" itemLabel="name" />
                     </form:select>
                     </td>
-                    <td><form:errors path="dept" cssClass="error" /></td>
+                    <td><form:errors path="report.dept" cssClass="error" /></td>
                 </tr>
 
                 <tr>
                     <td>Преподаватель:</td>
-                    <td><form:select path="teacher.id">
+                    <td><form:select path="report.teacher.id">
                         <c:if test="${!processPath.contains(\"edit\")}"> <form:option value="NONE" label="--- выберите ---" /> </c:if>
                         <form:options items="${teacherList}" itemValue="id" itemLabel="name" />
                     </form:select>
                     </td>
-                    <td><form:errors path="teacher" cssClass="error" /></td>
+                    <td><form:errors path="report.teacher" cssClass="error" /></td>
                 </tr>
 
                 <tr>
                     <td>Дисциплина:</td>
-                    <td><form:select path="disc.id">
+                    <td><form:select path="reportEntry.disc.id">
                         <c:if test="${!processPath.contains(\"edit\")}"> <form:option value="NONE" label="--- выберите ---" /> </c:if>
                         <form:options items="${disciplineList}" itemValue="id" itemLabel="name" />
                     </form:select>
                     </td>
-                    <td><form:errors path="disc" cssClass="error" /></td>
+                    <td><form:errors path="reportEntry.disc" cssClass="error" /></td>
                 </tr>
 
                 <tr>
                     <td>Поток:</td>
-                    <td><form:select path="flow.id">
+                    <td><form:select path="reportEntry.flow.id">
                         <c:if test="${!processPath.contains(\"edit\")}"> <form:option value="NONE" label="--- выберите ---" /> </c:if>
                         <form:options items="${flowList}" itemValue="id" itemLabel="name" />
                     </form:select>
                     </td>
-                    <td><form:errors path="flow" cssClass="error" /></td>
+                    <td><form:errors path="reportEntry.flow" cssClass="error" /></td>
                 </tr>
 
                 <tr>
-                    <td>Число студ.:</td>
-                    <td><form:input path="stud_count"></form:input>
+                    <td>Число студ. (план):</td>
+                    <td><form:input path="reportEntry.stud_count_plan"></form:input>
                     </td>
-                    <td><form:errors path="stud_count" cssClass="error" /></td>
+                    <td><form:errors path="reportEntry.stud_count_plan" cssClass="error" /></td>
                 </tr>
                 <tr>
-                    <td>Лекции:</td>
-                    <td><form:input path="lection_count"></form:input>
+                    <td>Лекции (план):</td>
+                    <td><form:input path="reportEntry.lection_count_plan"></form:input>
                     </td>
-                    <td><form:errors path="lection_count" cssClass="error" /></td>
+                    <td><form:errors path="reportEntry.lection_count_plan" cssClass="error" /></td>
+                </tr>
+
+
+                <tr>
+                    <td>Число студ. (факт):</td>
+                    <td><form:input path="reportEntry.stud_count_fact"></form:input>
+                    </td>
+                    <td><form:errors path="reportEntry.stud_count_fact" cssClass="error" /></td>
+                </tr>
+                <tr>
+                    <td>Лекции (факт):</td>
+                    <td><form:input path="reportEntry.lection_count_fact"></form:input>
+                    </td>
+                    <td><form:errors path="reportEntry.lection_count_fact" cssClass="error" /></td>
                 </tr>
 
                 <tr>

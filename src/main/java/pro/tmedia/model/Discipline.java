@@ -1,5 +1,6 @@
 package pro.tmedia.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
@@ -11,5 +12,15 @@ import javax.persistence.Table;
 @Entity
 @Table(name="disc")
 public class Discipline extends DictionaryItem {
+    /*@Column(name="dept_id")
+    private Department department;
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
+    }  */
 }
 

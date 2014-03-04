@@ -58,8 +58,13 @@ INSERT INTO `dept` (`id`, `head`, `name`) VALUES
 CREATE TABLE IF NOT EXISTS `disc` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
+  `dept_id` int(11) not null,
+  foreign key(`dept_id`)
+    references dept(id)
+    on delete cascade,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `UQ__disc__000000000000004E` (`id`)
+  UNIQUE KEY `UQ__disc__000000000000004E` (`id`),
+  UNIQUE KEY `UQ__disc__0000000000023211` (`name`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=5 ;
 
 --
@@ -104,7 +109,8 @@ CREATE TABLE IF NOT EXISTS `sem` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `UQ__sem__0000000000000032` (`id`)
+  UNIQUE KEY `UQ__sem__0000000000000032` (`id`),
+  UNIQUE KEY `UQ__sem__0000000000424325` (`name`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=4 ;
 
 --
@@ -126,7 +132,8 @@ CREATE TABLE IF NOT EXISTS `teacher` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `UQ__teacher__0000000000000040` (`id`)
+  UNIQUE KEY `UQ__teacher__0000000000000040` (`id`),
+  UNIQUE KEY `UQ__teacher__0000000002432523555` (`name`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=3 ;
 
 --
@@ -145,21 +152,13 @@ INSERT INTO `teacher` (`id`, `name`) VALUES
 
 CREATE TABLE IF NOT EXISTS `report` (
   `id` int(11) not null AUTO_INCREMENT,
-  `flow_id` int(11) not null,
-  `disc_id` int(11) not null,
   `sem_id` int(11) not null,
   `dept_id` int(11) not null,
   `teacher_id` int(11) not null,
   
   PRIMARY KEY (`id`),
   UNIQUE KEY `UQ__report__0000000000001040` (`id`),
-  
-  foreign key(`flow_id`)
-			references flow(id)
-			on delete cascade,
-  foreign key(`disc_id`)
-			references disc(id)
-			on delete cascade,
+
   foreign key(`sem_id`)
 			references sem(id)
 			on delete cascade,
@@ -175,8 +174,8 @@ CREATE TABLE IF NOT EXISTS `report` (
 -- Dumping data for table `report`
 --
 
-INSERT INTO `report` (`flow_id`, `disc_id`, `sem_id`, `dept_id`, `teacher_id`) VALUES
-(1, 1, 1, 1, 1);
+INSERT INTO `report` (`sem_id`, `dept_id`, `teacher_id`) VALUES
+(1, 1, 1);
 
 
 -- --------------------------------------------------------
@@ -187,6 +186,8 @@ INSERT INTO `report` (`flow_id`, `disc_id`, `sem_id`, `dept_id`, `teacher_id`) V
 
 CREATE TABLE IF NOT EXISTS `report_entry` (
   `id` int(11) not null AUTO_INCREMENT,
+  `flow_id` int(11) not null,
+  `disc_id` int(11) not null,
   `report_id` int(11) not null,
 
   `stud_count_plan` int(11) not null,
@@ -197,8 +198,14 @@ CREATE TABLE IF NOT EXISTS `report_entry` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `UQ__report_entry__0000000000002040` (`id`),
 
+  foreign key(`flow_id`)
+    references flow(id)
+    on delete cascade,
+  foreign key(`disc_id`)
+    references disc(id)
+    on delete cascade,
   foreign key(`report_id`)
-  references report(id)
+    references report(id)
     on delete cascade
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
@@ -206,8 +213,8 @@ CREATE TABLE IF NOT EXISTS `report_entry` (
 -- Dumping data for table `report_entry`
 --
 
-INSERT INTO `report_entry` (`report_id`, `stud_count_plan`, `lection_count_plan`, `stud_count_fact`, `lection_count_fact`) VALUES
-(1, 60, 0, 75, 10);
+INSERT INTO `report_entry` (`report_id`, `flow_id`, `disc_id`, `stud_count_plan`, `lection_count_plan`, `stud_count_fact`, `lection_count_fact`) VALUES
+(1, 1, 1, 60, 0, 75, 10);
 
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

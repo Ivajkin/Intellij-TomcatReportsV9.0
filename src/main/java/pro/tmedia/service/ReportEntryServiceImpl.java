@@ -25,8 +25,8 @@ public class ReportEntryServiceImpl implements ReportEntryService {
     }
 
     @Override
-    public List<ReportEntry> findItems() {
-        return reportEntryDAO.findItems();
+    public List<ReportEntry> findItems(final Integer sem_id, final Integer dept_id, final Integer teacher_id) {
+        return reportEntryDAO.findItems(sem_id, dept_id, teacher_id);
     }
 
     @Override

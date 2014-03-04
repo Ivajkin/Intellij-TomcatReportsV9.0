@@ -39,7 +39,7 @@
          },
          'reports': {
              label: 'Вывести отчет',
-             listPath: '/report/list.html',
+             listPath: '/report/select.html',
              createPath: '/report/create.html',
              icon: 'reportIcon.png'
          }
